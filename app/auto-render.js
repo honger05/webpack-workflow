@@ -1,4 +1,5 @@
-var $ = require("$-debug");
+var $ = require("./jquery.js");
+
 var DATA_WIDGET_AUTO_RENDERED = "data-widget-auto-rendered";
 // 自动渲染接口，子类可根据自己的初始化逻辑进行覆盖
 exports.autoRender = function(config) {
