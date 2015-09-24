@@ -37,6 +37,13 @@ var Mask = Overlay.extend({
     },
     _onRenderOpacity: function(val) {
         this.element.css("opacity", val);
+    },
+    setup: function() {
+        var that = this;
+        Mask.superclass.setup.call(this);
+        this.element.on('click', function() {
+            that.hide();
+        })
     }
 });
 

@@ -54,7 +54,10 @@
 	'use strict';
 
 	var Overlay = __webpack_require__(2);
+	var mask = __webpack_require__(14);
+	var $ = __webpack_require__(3);
 
+	// 基本浮层
 	var o = new Overlay({
 	    template: "<div class='overlay'>目标元素1</div>",
 	    parentNode: '#c',
@@ -74,6 +77,76 @@
 	    backgroundColor: '#f53379'
 	});
 	o.set('height', 40);
+
+
+	// 全局定位浮层
+	var o2 = new Overlay({
+	    element: '#b',
+	    width: 200,
+	    height: 100,
+	    align: {
+	        selfXY: ['50%', '50%'],
+	        baseXY: ['50%', '50%']
+	    }
+	});
+
+	o2.show();
+
+
+	// 点击文档其他地方隐藏自身 this._blurHide()
+	// 继承使用
+	var TestPopup = Overlay.extend({
+	  attrs: {
+	    trigger: null
+	  },
+
+	  setup: function() {
+	    var that = this;
+	    TestPopup.superclass.setup.call(this);
+	    this._setPosition();
+	    $(this.get('trigger')).click(function() {
+	        that.show();
+	    });
+	    this.element.hide();
+	    this._blurHide([this.get('trigger')]);
+	  }
+	});
+
+	new TestPopup({
+	    trigger: '#d1_trigger',
+	    element: '#d1',
+	    align: {
+	        baseElement: '#d1_trigger',
+	        baseXY: ['100%', 0]
+	    }
+	})
+
+	new TestPopup({
+	    trigger: '#d2_trigger',
+	    element: '#d2',
+	    align: {
+	        baseElement: '#d2_trigger',
+	        baseXY: ['100%', 0]
+	    }
+	})
+
+
+	// 全局遮罩Mask组件示例
+	// 单例组件，修改后全部 Mask 都生效。
+	$('#a_btn').click(function() {
+	    mask.show();
+	});
+
+	$(document).keyup(function(e) {
+	    // keyboard esc
+	    if (e.keyCode === 27) {
+	        mask.hide();
+	    }
+	});
+
+	$('#b_btn').click(function() {
+	    mask.set('backgroundColor', 'green').set('opacity', '0.3').show();
+	});
 
 /***/ },
 /* 2 */
@@ -1827,6 +1900,64 @@
 	    //  2. document.body 上有 data-api="off"，表示关闭所有
 	    return elementDataApi === "off" || elementDataApi !== "on" && isDefaultOff;
 	};
+
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(3), 
+	    Overlay = __webpack_require__(2), 
+	    ua = (window.navigator.userAgent || "").toLowerCase(), 
+	    isIE6 = ua.indexOf("msie 6") !== -1, 
+	    body = $(document.body), 
+	    doc = $(document);
+	    
+	// Mask
+	// ----------
+	// 全屏遮罩层组件
+	var Mask = Overlay.extend({
+	    attrs: {
+	        width: isIE6 ? doc.outerWidth(true) : "100%",
+	        height: isIE6 ? doc.outerHeight(true) : "100%",
+	        className: "ui-mask",
+	        opacity: .2,
+	        backgroundColor: "#000",
+	        style: {
+	            position: isIE6 ? "absolute" : "fixed",
+	            top: 0,
+	            left: 0
+	        },
+	        align: {
+	            // undefined 表示相对于当前可视范围定位
+	            baseElement: isIE6 ? body : undefined
+	        }
+	    },
+	    show: function() {
+	        if (isIE6) {
+	            this.set("width", doc.outerWidth(true));
+	            this.set("height", doc.outerHeight(true));
+	        }
+	        return Mask.superclass.show.call(this);
+	    },
+	    _onRenderBackgroundColor: function(val) {
+	        this.element.css("backgroundColor", val);
+	    },
+	    _onRenderOpacity: function(val) {
+	        this.element.css("opacity", val);
+	    },
+	    setup: function() {
+	        var that = this;
+	        Mask.superclass.setup.call(this);
+	        this.element.on('click', function() {
+	            that.hide();
+	        })
+	    }
+	});
+
+	// 单例
+	module.exports = new Mask();
+
 
 
 /***/ }
