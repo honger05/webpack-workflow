@@ -1,45 +1,27 @@
 'use strict';
 
-var Tip = require('./tip.js');
+var Dialog = require('./dialog.js');
+
 var $ = require('./jquery.js');
 
-var t1 = new Tip({
-    trigger: '#test1',
-    content: '<div style="padding:10px">我是内容 我是内容</div>',
-    arrowPosition: 10
+new Dialog({
+    trigger: '#example1',
+    height: '100px',
+    content: '传入了字符串'
 });
 
-var t2 = new Tip({
-    trigger: '#test2',
-    content: '<div style="padding:10px">我是内容 我是内容</div>',
-    theme: 'white',
-    effect: 'slide',
-    arrowPosition: 11
+new Dialog({
+    trigger: '#example2',
+    height: '100px',
+    content: $('#example2-dom')
 });
 
-var t3 = new Tip({
-    trigger: '#test3',
-    content: '<div style="padding:10px">我是内容 我是内容</div>',
-    theme: 'blue',
-    effect: 'fade',
-    arrowPosition: 7
-});
-t3.set('content', '更改后的内容');
-
-var t4 = new Tip({
-    trigger: '#test4',
-    height: 100,
-    width: 200,
-    content: '<div>比较高的内容</div>',
-    theme: 'white',
-    inViewport: true,
-    arrowPosition: 7
+new Dialog({
+    trigger: '#example3',
+    content: '<div style="padding:20px;">传入了 html 标签</div>'
 });
 
-var t5 = new Tip({
-    trigger: '.test5'
+new Dialog({
+    trigger: '#example4',
+    content: 'http://www.baidu.com/'
 });
-t5.before('show', function() {
-    this.set('content', this.activeTrigger.html());
-});
-
