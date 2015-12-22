@@ -1,8 +1,14 @@
-# Object file
-*.o
+# spm
+spm_modules
 
-# Ada Library Information
-*.ali
-
+# node
 node_modules
 
+# build
+dist
+
+# test runner
+_site
+
+# npm-debug.log
+*.log
