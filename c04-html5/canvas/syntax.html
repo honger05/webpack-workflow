@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas</title>
+</head>
+<body>
+  <img id="scream" src="http://www.hubwiz.com/course/54eeb95cf863871d446b24a0/img/img_the_scream_show.png" alt="">
+  <button type="button" name="button">drawImage</button>
+  <canvas id="myCanvas" width="600" height="600" style="border:1px solid #c3c3c3">
+    您的浏览器不支持 HTML5 canvas 标签。
+  </canvas>
+
+  <script>
+    // get context object
+    var c = document.getElementById('myCanvas');
+    var ctx = c.getContext('2d');
+
+    // stroke a rect
+    ctx.fillStyle = '#ff0000';
+    ctx.fillRect(10, 10, 150, 75);
+
+    // stroke a line
+    ctx.moveTo(0, 0);
+    ctx.lineTo(200, 100);
+    ctx.stroke();
+
+    // stroke a circle
+    ctx.beginPath();
+    ctx.arc(95, 150, 40, 0, 2 * Math.PI);
+    ctx.stroke();
+
+    // 曲线
+    ctx.beginPath();
+  	ctx.moveTo(188, 150);
+  	ctx.quadraticCurveTo(288, 0, 388, 150);
+  	ctx.lineWidth = 10;
+  	ctx.strokeStyle = 'orange';
+  	ctx.stroke();
+
+    // gradient
+    var grd = ctx.createLinearGradient(200, 200, 400, 400);
+    grd.addColorStop(0, "blue");
+	  grd.addColorStop(1, "red");
+    ctx.fillStyle = grd;
+    ctx.fillRect(200, 200, 150, 80);
+
+    // draw image
+    var img = document.getElementById('scream');
+    var btn = document.querySelector('button[name="button"]');
+    btn.addEventListener('click', function() {
+      ctx.drawImage(img, 300, 300);
+    })
+  </script>
+</body>
+</html>

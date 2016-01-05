@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>drag & drop</title>
+    <style>
+      #div1, #div2 {
+        width: 500px;
+        height: 70px;
+        padding: 10px;
+        border: 1px solid #aaa;
+        margin: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>请把 logo 的图片拖放到矩形中</p>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <img src="sdfs.jpg" width="40" height="40" draggable=true alt="" id="drag1" ondragstart="drag(event)">
+
+    <script type="text/javascript">
+      function drag(ev) {
+        ev.dataTransfer.setData('Text', ev.target.id)
+      }
+
+      function allowDrop(ev) {
+        ev.preventDefault()
+      }
+
+      function drop(ev) {
+        ev.preventDefault()
+        var data = ev.dataTransfer.getData('Text')
+        ev.target.appendChild(document.getElementById(data))
+      }
+    </script>
+  </body>
+</html>
