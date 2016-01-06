@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D transform</title>
+  <style>
+    .animated_div {
+      width: 60px;
+      height: 40px;
+      color: #fff;
+      position: relative;
+      font-weight: bold;
+      padding: 20px 10px 0 10px;
+      float: left;
+      margin: 20px;
+      margin-right: 50px;
+      border: 1px solid #888;
+      border-radius: 5px;
+      font: 12px Verdana, Arial, Helvetica, sans-serif;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    #rotate1, #rotatey1 {
+      border: 1px solid #000;
+      background-color: red;
+      margin: 10px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <p onclick="rotateDIV()" id="rotate1" class="animated_div">2d 旋转</p>
+  <p onclick="rotateYDIV()" id="rotatey1" class="animated_div">3d 旋转</p>
+
+  <script>
+
+    var x, y, n = 0, ny = 0, rotINT, rotYINT;
+
+    function rotateDIV() {
+      x = document.getElementById('rotate1')
+      clearInterval(rotINT)
+      rotINT = setInterval("startRotate()", 10)
+    }
+
+    function rotateYDIV() {
+      y = document.getElementById('rotatey1')
+      clearInterval(rotYINT)
+      rotYINT = setInterval('startYRotate()', 10)
+    }
+
+    function startRotate() {
+      n = n + 1;
+      x.style.transform = 'rotate(' + n + 'deg)'
+      x.style.webkitTransform = 'rotate(' + n + 'deg)'
+      x.style.OTransform = 'rotate(' + n + 'deg)'
+      x.style.MozTransform = 'rotate(' + n + 'deg)'
+      if (n == 180 || n == 360) {
+        clearInterval(rotINT)
+        n == 360 && (n = 0)
+      }
+    }
+
+    function startYRotate() {
+      ny = ny + 1;
+      y.style.transform = 'rotateY(' + ny + 'deg)'
+      y.style.webkitTransform = 'rotateY(' + ny + 'deg)'
+      y.style.OTransform = 'rotateY(' + ny + 'deg)'
+      y.style.MozTransform = 'rotateY(' + ny + 'deg)'
+      if (ny == 180 || ny >= 360) {
+        clearInterval(rotYINT)
+        ny >= 360 && (ny = 0)
+      }
+    }
+
+  </script>
+</body>
+</html>
