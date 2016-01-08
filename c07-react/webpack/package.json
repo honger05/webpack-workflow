@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "webpack": "^1.12.10",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "scripts": {
+    "build": "webpack --progress --colors",
+    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build"
+  }
+}

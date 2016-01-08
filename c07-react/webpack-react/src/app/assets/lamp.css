@@ -1,0 +1,18 @@
+
+.ui-lamp {
+  display: inline-block;
+  margin: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.ui-lamp.on {
+  opacity: 1;
+  background: radial-gradient(30% 30%, white 5%, red 95%);
+}
+
+.ui-lamp.off {
+  opacity: 0.5;
+  background: radial-gradient(30% 30%, #888 5%, red 95%);
+}
