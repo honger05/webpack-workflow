@@ -58,7 +58,7 @@ module.exports = {
         test: /\.scss$/,
         loader: 'style!css!sass'
       },{
-        test: /\.woff$/,
+        test: /\.ttf$/,
         loader: 'url?limit=100000'
       }
     ]

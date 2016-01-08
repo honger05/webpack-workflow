@@ -5,9 +5,37 @@ import React from 'react'
 require('../assets/lamp.css')
 
 export default class Lamp extends React.Component {
+
+  state = {
+    onoff: true
+  };
+
+  componentDidMount() {
+    var breath = !!this.props.breath
+    var timegap = this.props.gap || 1000
+
+    if (breath) {
+      this.timer = setInterval(() => {
+        this.setState({onoff: !this.state.onoff})
+      }, timegap)
+    }
+  }
+
+  conponentWillUnmount() {
+    if (this.timer) {
+      clearInterval(this.timer)
+    }
+  }
+
   render() {
     var onoff = this.props.onoff
     var color = this.props.color
+
+    var breath = !!this.props.breath
+
+    if (breath) {
+      onoff = this.state.onoff ? 'on' : 'off'
+    }
 
     var lights = {
       on: '#fff',
