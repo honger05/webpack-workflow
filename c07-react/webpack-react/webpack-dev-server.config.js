@@ -9,7 +9,7 @@ var TransferWebpackPlugin = require('transfer-webpack-plugin');
 module.exports = {
   entry: [
     'webpack/hot/dev-server',
-    'webpack/hot/only-dev-server',
+    // 'webpack/hot/only-dev-server',
     path.resolve(__dirname, 'src/app/app.js')
   ],
   output: {
@@ -37,11 +37,11 @@ module.exports = {
   ],
   module: {
     loaders: [
-      {
-        test: /\.jsx?$/,
-        loader: 'react-hot',
-        exclude: [nodeModulesPath]
-      },
+      // {
+      //   test: /\.jsx?$/,
+      //   loader: 'react-hot',
+      //   exclude: [nodeModulesPath]
+      // },
       {
         test: /\.(js|jsx)$/,
         loader: 'babel'

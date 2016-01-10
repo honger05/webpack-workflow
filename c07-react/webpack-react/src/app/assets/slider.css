@@ -1,0 +1,9 @@
+
+.ui-slider {
+  position: relative;
+  display: inline-block;
+}
+
+.ui-slider img.knob {
+  position: absolute;
+}

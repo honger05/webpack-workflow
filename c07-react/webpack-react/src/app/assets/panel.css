@@ -1,0 +1,22 @@
+
+.ui-panel {
+  background: #f0f0f0;
+  min-height: 280px;
+  padding: 5px;
+}
+
+.ui-panel .header {
+  background: #8187c3;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.ui-panel .content {
+  padding: 5px;
+}
+
+.fn-indent {
+  text-indent: 2em;
+}

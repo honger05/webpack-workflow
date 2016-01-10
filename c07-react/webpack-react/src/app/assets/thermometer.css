@@ -1,0 +1,18 @@
+
+.ui-thermometer {
+  position: relative;
+}
+
+.ui-thermometer .bubble {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.ui-thermometer .bar {
+  position: absolute;
+  width: 10px;
+  left: 80px;
+  transition: top 0.5s;
+}

@@ -1,0 +1,13 @@
+
+.ui-gauge {
+  position: relative;
+  display: inline-block;
+}
+
+.ui-gauge .pointer {
+  position: absolute;
+  left: 149px;
+  top: 104px;
+  transform-origin: 1px 45px;
+  transition: transform 2s;
+}
