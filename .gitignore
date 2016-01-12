@@ -10,7 +10,7 @@ dist
 # test runner
 _site
 
-# npm-debug.log
+npm-debug.log
 *.log
 
 .DS_Store
