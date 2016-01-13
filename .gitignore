@@ -4,7 +4,7 @@ spm_modules
 # node
 node_modules
 
-# build
+build
 dist
 
 # test runner

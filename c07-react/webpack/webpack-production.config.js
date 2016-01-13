@@ -6,6 +6,7 @@ var buildPath = path.resolve(__dirname, 'build')
 var nodeModulesPath = path.resolve(__dirname, 'node_modules')
 var TransferWebpackPlugin = require('transfer-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -23,6 +24,17 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
     new ExtractTextPlugin('./css/[name].css'),
+
+    new HtmlWebpackPlugin({
+      title: 'My App',
+      filename: 'assets/admin.html'
+    }),
+
+    new HtmlWebpackPlugin({
+      title: 'Custom template',
+      template: 'my-index.html',
+      inject: 'body'
+    }),
 
     new TransferWebpackPlugin([
       {from: 'www'}
