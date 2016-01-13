@@ -25,14 +25,25 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('./css/[name].css'),
 
+    // new HtmlWebpackPlugin({
+    //   title: 'My App',
+    //   filename: 'assets/admin.html'
+    // }),
+
     new HtmlWebpackPlugin({
-      title: 'My App',
-      filename: 'assets/admin.html'
+      title: '小蚂蚁 - 保护米特卖平台',
+      filename: 'index.html',
+      template: './src/tmpl/index.html',
+      chunks: ['index'],
+      inject: 'body'
     }),
 
     new HtmlWebpackPlugin({
-      title: 'Custom template',
-      template: 'my-index.html',
+      title: '小蚂蚁',
+      filename: 'detail.html',
+      hash: true,
+      template: './src/tmpl/detail.html',
+      chunks: ['detail'],
       inject: 'body'
     }),
 
@@ -52,6 +63,9 @@ module.exports = {
       },{
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+      },{
+        test: /\.hbs$/,
+        loader: 'handlebars'
       },{
         test: /\.(png|jpg)$/,
         loader: 'url?limit=25000'

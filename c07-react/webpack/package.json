@@ -9,7 +9,8 @@
   "devDependencies": {
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
-    "html-webpack-plugin": "^1.7.0",
+    "html-loader": "^0.4.0",
+    "html-webpack-plugin": "^2.6.1",
     "less": "^2.5.3",
     "less-loader": "^2.2.2",
     "node-sass": "^3.4.2",
