@@ -48,7 +48,7 @@
 	
 	__webpack_require__(5)
 	
-	alert(1)
+	console.log('[index page] is onload')
 
 
 /***/ },

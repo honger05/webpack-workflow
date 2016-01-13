@@ -1,4 +1,5 @@
 
+require('../assets/common.scss')
 require('../assets/detail.scss')
 
-alert('scss')
+console.log('detial page is onload')

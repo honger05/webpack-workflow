@@ -25,14 +25,10 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('./css/[name].css'),
 
-    // new HtmlWebpackPlugin({
-    //   title: 'My App',
-    //   filename: 'assets/admin.html'
-    // }),
-
     new HtmlWebpackPlugin({
       title: '小蚂蚁 - 保护米特卖平台',
       filename: 'index.html',
+      hash: true,
       template: './src/tmpl/index.html',
       chunks: ['index'],
       inject: 'body'

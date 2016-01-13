@@ -1,4 +1,5 @@
 
+require('../assets/common.scss')
 require('../assets/index.less')
 
-alert(1)
+console.log('[index page] is onload')

@@ -47,7 +47,7 @@
 	
 	__webpack_require__(1)
 	
-	alert('scss')
+	console.log('detial page is onload')
 
 
 /***/ },

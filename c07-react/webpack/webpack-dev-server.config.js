@@ -5,6 +5,7 @@ var buildPath = path.resolve(__dirname, 'build')
 var nodeModulesPath = path.resolve(__dirname, 'node_modules')
 var TransferWebpackPlugin = require('transfer-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -31,8 +32,20 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
 
-    new ExtractTextPlugin('./css/[name].css', {
-      allChunks: true
+    new HtmlWebpackPlugin({
+      title: '小蚂蚁 - 保护米特卖平台',
+      filename: 'index.html',
+      template: './src/tmpl/index.html',
+      chunks: ['index'],
+      inject: 'body'
+    }),
+
+    new HtmlWebpackPlugin({
+      title: '小蚂蚁',
+      filename: 'detail.html',
+      template: './src/tmpl/detail.html',
+      chunks: ['detail'],
+      inject: 'body'
     }),
 
     new TransferWebpackPlugin([
@@ -44,13 +57,13 @@ module.exports = {
     loaders: [
       {
         test: /\.less$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
+        loader: 'style!css!less'
       },{
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
+        loader: 'style!css!sass'
       },{
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+        loader: 'style!css'
       },{
         test: /\.(png|jpg)$/,
         loader: 'url?limit=25000'
