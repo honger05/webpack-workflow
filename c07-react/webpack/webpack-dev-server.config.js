@@ -1,7 +1,7 @@
 
 var webpack = require('webpack')
 var path = require('path')
-var buildPath = path.resolve(__dirname, 'build')
+var distPath = path.resolve(__dirname, 'dist')
 var nodeModulesPath = path.resolve(__dirname, 'node_modules')
 var TransferWebpackPlugin = require('transfer-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -14,7 +14,7 @@ module.exports = {
     detail: './src/app/components/detail/detail.js'
   },
   output: {
-    path: buildPath,
+    path: distPath,
     filename: './script/[name].bundle.js',
     chunkFilename: './script/[id].chunk.js'
   },
