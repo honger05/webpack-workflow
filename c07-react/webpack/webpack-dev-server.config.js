@@ -33,7 +33,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
 
     new HtmlWebpackPlugin({
-      title: '小蚂蚁 - 保护米特卖平台',
+      title: 'index',
       filename: 'index.html',
       template: './src/tmpl/index.html',
       chunks: ['index'],
@@ -41,7 +41,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      title: '小蚂蚁',
+      title: 'detail',
       filename: 'detail.html',
       template: './src/tmpl/detail.html',
       chunks: ['detail'],
