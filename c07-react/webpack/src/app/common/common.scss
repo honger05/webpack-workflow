@@ -1,11 +1,43 @@
 
-$hc: red;
-$fc: blue;
+$fc: #969696;
+$hc: #8c7fee;
 
-header {
-  background: $hc;
+.mi-header {
+  margin: 0 auto;
+  background-color: #fff;
+
+  &__container {
+    width: 1190px;
+    margin: 0 auto;
+    border: 1px solid red;
+    padding: 10px;
+  }
+
+  &__logo {
+    float: left;
+  }
+
+  &__nav {
+    float: right;
+    margin-top: 20px;
+
+    li {
+      display: inline-block;
+      margin-left: 20px;
+
+      a {
+        font-size: 15px;
+        color: $fc;
+
+        &:hover {
+          color: $hc;
+          text-decoration: none;
+        }
+      }
+    }
+  }
 }
 
-footer {
+.mi-footer {
   background: $fc;
 }
