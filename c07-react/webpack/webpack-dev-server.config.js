@@ -10,13 +10,13 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry: {
     devServer: 'webpack/hot/dev-server',
-    index: './src/app/components/index.js',
-    detail: './src/app/components/detail.js'
+    index: './src/app/components/index/index.js',
+    detail: './src/app/components/detail/detail.js'
   },
   output: {
     path: buildPath,
-    filename: './js/[name].bundle.js',
-    chunkFilename: './js/[id].chunk.js'
+    filename: './script/[name].bundle.js',
+    chunkFilename: './script/[id].chunk.js'
   },
   devServer: {
     contentBase: 'src/www',
@@ -35,6 +35,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'index',
       filename: 'index.html',
+      hash: true,
       template: './src/tmpl/index.html',
       chunks: ['index'],
       inject: 'body'
@@ -43,6 +44,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'detail',
       filename: 'detail.html',
+      hash: true,
       template: './src/tmpl/detail.html',
       chunks: ['detail'],
       inject: 'body'

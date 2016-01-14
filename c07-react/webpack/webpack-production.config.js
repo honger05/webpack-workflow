@@ -10,23 +10,23 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
-    index: './src/app/components/index.js',
-    detail: './src/app/components/detail.js'
+    index: './src/app/components/index/index.js',
+    detail: './src/app/components/detail/detail.js'
   },
   output: {
     path: buildPath,
-    filename: './js/[name].bundle.js',
-    chunkFilename: './js/[id].chunk.js'
+    filename: './script/[name].bundle.js',
+    chunkFilename: './script/[id].chunk.js'
   },
   resolve: {
     extensions: ['', '.js', '.json', '.coffee']
   },
   devtool: 'source-map',
   plugins: [
-    new ExtractTextPlugin('./css/[name].css'),
+    new ExtractTextPlugin('./style/[name].css'),
 
     new HtmlWebpackPlugin({
-      title: '小蚂蚁 - 保护米特卖平台',
+      title: 'index',
       filename: 'index.html',
       hash: true,
       template: './src/tmpl/index.html',
@@ -35,7 +35,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      title: '小蚂蚁',
+      title: 'detail',
       filename: 'detail.html',
       hash: true,
       template: './src/tmpl/detail.html',
