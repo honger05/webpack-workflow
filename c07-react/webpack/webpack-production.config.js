@@ -58,14 +58,19 @@ module.exports = {
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
       },{
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader')
       },{
         test: /\.hbs$/,
         loader: 'handlebars'
       },{
-        test: /\.(png|jpg)$/,
+        test: /\.(png|jpg|gif)$/,
         loader: 'url?limit=25000'
-      },{
+      },
+      {
+        test: /\.html$/,
+        loader: 'html'
+      },
+      {
         test: /\.ttf$/,
         loader: 'url?limit=100000'
       }
