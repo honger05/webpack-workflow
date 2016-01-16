@@ -10,14 +10,25 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry: {
     devServer: 'webpack/hot/dev-server',
-    index: './src/app/components/index/index.js',
-    detail: './src/app/components/detail/detail.js'
+    index: './src/app/components/index/index.js'
+    // detail: './src/app/components/detail/detail.js'
   },
   output: {
     path: distPath,
     filename: './script/[name].bundle.js',
     chunkFilename: './script/[id].chunk.js'
   },
+
+  // entry: [
+  //   'webpack/hot/dev-server',
+  //   './src/app/components/index/index.js'
+  // ],
+  //
+  // output: {
+  //   path: distPath,
+  //   filename: './script/index.bundle.js'
+  // },
+
   devServer: {
     contentBase: 'src/www',
     devtool: 'eval',
@@ -40,15 +51,15 @@ module.exports = {
       chunks: ['index'],
       inject: 'body'
     }),
-
-    new HtmlWebpackPlugin({
-      title: 'detail',
-      filename: 'detail.html',
-      hash: true,
-      template: './src/tmpl/detail.html',
-      chunks: ['detail'],
-      inject: 'body'
-    }),
+    //
+    // new HtmlWebpackPlugin({
+    //   title: 'detail',
+    //   filename: 'detail.html',
+    //   hash: true,
+    //   template: './src/tmpl/detail.html',
+    //   chunks: ['detail'],
+    //   inject: 'body'
+    // }),
 
     new TransferWebpackPlugin([
       {from: 'www'}
@@ -57,6 +68,10 @@ module.exports = {
   ],
   module: {
     loaders: [
+      // {
+      //   test: /\.html$/,
+      //   loader: 'html'
+      // },
       {
         test: /\.less$/,
         loader: 'style!css!less'

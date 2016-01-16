@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
 
-require('../assets/logger.css')
+require('../assets/logger.scss')
 
 var LoggerContainer = (Wrapper) =>
   class WrapperComponent extends Component {
