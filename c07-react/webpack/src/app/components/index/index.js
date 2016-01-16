@@ -1,5 +1,5 @@
 
-require('../../common/style')
-require('./index.less')
+require('../../common/common.scss')
+require('./index.scss')
 
 console.log('[index page] is onloadZZasasasasasasas')

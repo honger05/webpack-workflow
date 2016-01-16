@@ -1,0 +1,67 @@
+
+@import './variable.scss';
+
+.mi-btn * {
+	margin: 0;
+	padding: 0;
+}
+
+.mi-btn {
+	display: inline-block;
+	*display: inline;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+	font-size: 14px;
+	font-family: inherit;
+	font-weight: bold;
+	border-radius: 2px;
+	padding: 0 20px;
+	*zoom: 1;
+	*overflow: visible;
+	background-image: none;
+
+	&__text {
+		background: none;
+		padding: 0;
+		height: auto;
+		line-height: auto;
+	}
+
+	&:hover {
+		text-decoration: none;
+		background-image: none;
+	}
+
+	&:active {
+		position: relative;
+		top: 1px;
+		box-shadow: 1px 1px 3px #999 inset;
+	}
+}
+
+
+.mi-btn-primary {
+	font-family: Arail;
+	color: #fff;
+	border: 1px solid $primary-color;
+	background-color: $primary-color;
+
+	&:hover {
+		background-color: $primary-hover-color;
+	}
+}
+
+a.mi-btn-primary {
+	color: #fff;
+
+	&:visited,
+	&:hover,
+	&:active {
+		color: #fff;
+	}
+}
+
+
+
