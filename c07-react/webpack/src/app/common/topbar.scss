@@ -4,22 +4,27 @@
 .mi-topbar {
   background: linear-gradient(to bottom, #fdfdfd, #ffffff);
 
-  &__container {
-    width: 1001px;
-    margin: 0 auto;
-
-  }
-
   &__logo {
     float: left;
     margin: 7px 0 6px 0;
+    width: 92px;
+    height: 27px;
+    text-indent: -9999px;
+    background: url(./img/topbar-logo.png) no-repeat;
   }
 
   &__login {
     float: right;
+    display: table;
+    height: 45px;
 
     .mi-btn {
-      
+      color: #000;
     }
+  }
+
+  &__login-cell {
+    display: table-cell;
+    vertical-align: middle;
   }
 }

@@ -2,4 +2,9 @@
 @import './base.css';
 @import './topbar.scss';
 @import './button.scss';
-@import './header.scss';
+@import './navbar.scss';
+
+.container {
+  width: 1001px;
+  margin: 0 auto;
+}
