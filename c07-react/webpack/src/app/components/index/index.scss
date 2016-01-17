@@ -5,7 +5,7 @@
 	width: 100%;
 	min-width: $min-width + 30;
 	height: 669px;
-	background-image: url(banner-bg-1.png);
+	background-image: url(banner-bg-1.jpg);
 	background-position: 50% 10%;
 	transition: background-image 1s;
 
@@ -69,7 +69,7 @@
 			display: block;
 			width: 110px;
 			height: 66px;
-			overflow: auto;
+			overflow: hidden;
 			float: left;
 			margin-right: 15px;
 			margin-top: 20px;
