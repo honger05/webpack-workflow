@@ -4,6 +4,7 @@
 .mi-navbar {
 	position: absolute;
 	width: 100%;
+	min-width: $min-width + 30;
 	height: 78px;
 	background-color: rgba(0, 0, 0, 0.2);
 
@@ -49,9 +50,22 @@
 
 	&__nav-right {
 		float: right;
-		color: #fff;
-		padding: 18px 20px;
-		background: rgba(0, 0, 0, 0.3);
+		display: table;
+
+		.contact {
+			display: table-cell;
+			color: #fff;
+			padding: 18px 25px;
+			background: rgba(0, 0, 0, 0.3);
+		}
+
+		.qrcode {
+			display: table-cell;
+			width: 100px;
+			height: 78px;
+			background: url(./img/qrcode.png) no-repeat 50% 50%;
+		}
+
 	}
 
 }

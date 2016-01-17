@@ -1,7 +1,105 @@
 
+@import '../../common/variable.scss';
 
 .mi-banner {
 	width: 100%;
+	min-width: $min-width + 30;
 	height: 669px;
-	background: url(banner-bg.jpg) no-repeat 50% 0%;
+	background: url(banner-bg.jpg) no-repeat 50% 10%;
+
+	&__main {
+		position: absolute;
+		top: 165+120px;
+		width: 600px;
+		height: 320px;
+		padding-top: 30px;
+
+		h1 {
+			color: #fff;
+			font-size: 36px;
+			letter-spacing: 3px;
+		}
+
+		h2 {
+			font-family: Arial;
+			letter-spacing: 2px;
+			color: #ccc;
+			font-size: 20px;
+		}
+
+	}
+
+	&__action {
+		margin-top: 40px;
+
+		.mi-btn {
+			float: left;
+			font-size: 24px;
+			letter-spacing: 2px;
+			padding: 14px 50px;
+			color: #fff;
+			outline: 0;
+		}
+
+		.qrcode {
+			float: left;
+			margin-left: 20px;
+			width: 66px;
+			height: 66px;
+			background: url(./qrcode2.png) no-repeat;
+		}
+
+		.qrcode + sub {
+			color: #ccc;
+			bottom: -4em;
+			margin-left: 20px;
+		}
+
+	}
+
+	&__nav {
+		width: 90%;
+		height: 100px;
+		margin-top: 29px;
+		border-top: 1px solid #fff;
+
+		li {
+			display: block;
+			width: 110px;
+			height: 66px;
+			overflow: auto;
+			float: left;
+			margin-right: 15px;
+			margin-top: 20px;
+			opacity: 0.6;
+			cursor: pointer;
+
+			img {
+				transition: transform 1s;
+			}
+		}
+
+		li:hover,
+		li.active {
+			opacity: 1;
+			outline: 2px solid #fff;
+		}
+
+		li:hover img,
+		li.active img {
+			transform: scale(1.2);
+		}
+
+	}
+
+	&__polyfill {
+		position: absolute;
+		top: 165+120px;
+		width: 58%;
+		min-width: 626px;
+		height: 320px;
+		padding-top: 30px;
+		background: rgba(0, 0, 0, 0.5);
+	}
+
 }

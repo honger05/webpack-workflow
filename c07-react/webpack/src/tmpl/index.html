@@ -22,7 +22,7 @@
   </header><!-- end of topbar -->
 
   <div class="mi-navbar">
-    <div class="container">
+    <div class="container fn-clear">
       <div class="mi-navbar__header">
         <a href="/" class="mi-navbar__brand">
           <h1>antsins.com</h1>
@@ -35,9 +35,7 @@
         <li><a href="/">关于我们</a></li>
       </ul>
       <div class="mi-navbar__nav-right">
-        <div class="qrcode">
-
-        </div>
+        <div class="qrcode"></div>
         <div class="contact">
           <p>投保联系方式：4008-000-000</p>
           <p>客服电话：400-123-123</p>
@@ -47,7 +45,26 @@
   </div><!-- end of navbar -->
 
   <div class="mi-banner">
-
+    <div class="mi-banner__polyfill"></div>
+    <div class="container">
+      <div class="mi-banner__main">
+        <h1>车行万里路 · 人车保平安</h1>
+        <h2>Dealership miles · car insurance and peace</h2>
+        <div class="mi-banner__action fn-clear">
+          <button class="mi-btn mi-btn-primary">立即参与</button>
+          <span class="qrcode"></span>
+          <sub>扫一扫购买!</sub>
+        </div>
+        <div class="mi-banner__nav">
+          <ul>
+            <li class="active"><img src="/assets/images/pic1.png" alt="" /></li>
+            <li><img src="/assets/images/pic2.png" alt="" /></li>
+            <li><img src="/assets/images/pic3.png" alt="" /></li>
+            <li><img src="/assets/images/pic4.jpg" alt="" /></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div><!-- end of banner -->
 
   <!-- <%= require('html!./common/footer.html') %> -->
