@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "jquery": "^2.2.0"
+    "jquery": "^2.2.0",
+    "underscore": "^1.8.3"
   },
   "scripts": {
     "build": "webpack --config webpack-production.config.js --progress --colors",
@@ -10,6 +11,7 @@
     "autoprefixer-loader": "^3.1.0",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
     "html-loader": "^0.4.0",
     "html-webpack-plugin": "^2.6.2",
     "less": "^2.5.3",

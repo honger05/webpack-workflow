@@ -2,4 +2,13 @@
 require('../../common/common.scss')
 require('./index.scss')
 
-console.log('[index page] is onloadZZasasasasasasas')
+var Slider = require('./slider.js')
+
+var slider = new Slider({
+  element: '.mi-banner__main',
+  activeIndex: 0
+})
+
+slider.render()
+
+// alert(slider)

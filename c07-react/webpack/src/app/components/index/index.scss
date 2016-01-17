@@ -5,7 +5,9 @@
 	width: 100%;
 	min-width: $min-width + 30;
 	height: 669px;
-	background: url(banner-bg.jpg) no-repeat 50% 10%;
+	background-image: url(banner-bg-1.png);
+	background-position: 50% 10%;
+	transition: background-image 1s;
 
 	&__main {
 		position: absolute;
