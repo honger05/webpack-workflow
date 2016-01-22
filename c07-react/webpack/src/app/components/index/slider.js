@@ -61,6 +61,14 @@ var Slider = Widget.extend({
   setup: function() {
     // this.get('panels').hide()
     this.switchTo(this.get('activeIndex'))
+
+    setInterval(function() {
+      var index = this.get('activeIndex') + 1
+      if (index > 3) {
+        index = 0
+      }
+      this.switchTo(index)
+    }.bind(this), 10000)
   }
 })
 
