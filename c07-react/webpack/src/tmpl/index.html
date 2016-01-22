@@ -5,45 +5,7 @@
   <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
-  <!-- <%= require('html!./common/header.html') %> -->
-
-  <header class="mi-topbar">
-    <div class="container fn-clear">
-      <a href="/" class="mi-topbar__logo">
-        <h1>蚂蚁保</h1>
-      </a>
-      <div class="mi-topbar__login">
-        <div class="mi-topbar__login-cell">
-          <a href="###" class="mi-btn">登陆</a>
-          <a href="###" class="mi-btn mi-btn-primary">注册</a>
-        </div>
-      </div>
-    </div>
-  </header><!-- end of topbar -->
-
-  <div class="mi-navbar">
-    <div class="container fn-clear">
-      <div class="mi-navbar__header">
-        <a href="/" class="mi-navbar__brand">
-          <h1>antsins.com</h1>
-        </a>
-      </div>
-      <ul class="mi-navbar__nav">
-        <li><a href="/" class="active">首页</a></li>
-        <li><a href="/">经典案例</a></li>
-        <li><a href="/">大事件</a></li>
-        <li><a href="/">关于我们</a></li>
-      </ul>
-      <div class="mi-navbar__nav-right">
-        <div class="qrcode"></div>
-        <div class="contact">
-          <p>投保联系方式：4008-000-000</p>
-          <p>客服电话：400-123-123</p>
-        </div>
-      </div>
-    </div>
-  </div><!-- end of navbar -->
-
+  <%= require('html!./header.html') %>
   <div class="mi-banner">
     <div class="mi-banner__polyfill"></div>
     <div class="container">
@@ -67,6 +29,8 @@
     </div>
   </div><!-- end of banner -->
 
-  <!-- <%= require('html!./common/footer.html') %> -->
+  <%= require('html!./footer.html') %>
+
+  <script src="scripts/common.js"></script>
 </body>
 </html>

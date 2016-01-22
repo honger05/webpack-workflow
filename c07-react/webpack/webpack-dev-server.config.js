@@ -1,4 +1,3 @@
-
 var webpack = require('webpack')
 var path = require('path')
 var distPath = path.resolve(__dirname, 'dist')
@@ -7,17 +6,38 @@ var TransferWebpackPlugin = require('transfer-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
-module.exports = {
+var config = {
+  env: process.env.NODE_ENV,
+  path: {
+    src: path.resolve(__dirname, "src/www"),
+    app: path.resolve(__dirname, "src/app"),
+    dist: path.resolve(__dirname, "dist"),
+    pub: path.resolve(__dirname, "pub")
+  },
+  defaultPath: "http://www.yy.com/",
+  cdn: "http://www.yy.com"
+}
+
+var route = [
+  'index', 'detail'
+]
+
+var devConfig = {
   entry: {
     devServer: 'webpack/hot/dev-server',
-    index: './src/app/components/index/index.js',
-    detail: './src/app/components/detail/detail.js'
+    common: ['jquery', 'handlebars']
   },
   output: {
     path: distPath,
-    filename: './script/[name].bundle.js',
-    chunkFilename: './script/[id].chunk.js'
+    filename: './scripts/[name].bundle.js',
+    chunkFilename: './scripts/[id].chunk.js'
   },
+
+  // 页面中引入
+  // externals: {
+  //   'jquery': 'window.jQuery',
+  //   '$': 'window.jQuery'
+  // },
 
   devServer: {
     contentBase: 'src/www',
@@ -28,28 +48,31 @@ module.exports = {
   },
   devtool: 'eval',
   resolve: {
-    extensions: ['', '.js', '.json', '.coffee']
+    extensions: ["", ".js", ".jsx", ".es6", "css", "scss", "png", "jpg", "jpeg"],
+    alias: {
+      'jquery': path.join(config.path.src, '/assets/jquery'),
+      'handlebars': path.join(config.path.src, '/assets/handlebars'),
+      'utils': path.join(config.path.src, '/utilities/utils')
+    }
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
 
-    new HtmlWebpackPlugin({
-      title: 'index',
-      filename: 'index.html',
-      hash: true,
-      template: './src/tmpl/index.html',
-      chunks: ['index'],
-      inject: 'body'
+    new webpack.optimize.OccurenceOrderPlugin(),
+
+    new webpack.ProvidePlugin({
+      jQuery: "jquery",
+      $: "jquery",
+      Handlebars: "handlebars"
     }),
 
-    new HtmlWebpackPlugin({
-      title: 'detail',
-      filename: 'detail.html',
-      hash: true,
-      template: './src/tmpl/detail.html',
-      chunks: ['detail'],
-      inject: 'body'
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "common",
+      filename: "scripts/common.js",
+      chunks: route
     }),
+
+    new webpack.NoErrorsPlugin(),
 
     new TransferWebpackPlugin([
       {from: 'www'}
@@ -58,27 +81,55 @@ module.exports = {
   ],
   module: {
     loaders: [
+      // {
+      //   test: /\.(js|jsx)$/,
+      //   loader: 'babel'
+      // },
       {
         test: /\.less$/,
-        loader: 'style!css!less'
+        loader: 'style!css!autoprefixer!less'
       },{
         test: /\.scss$/,
-        loader: 'style!css!sass'
+        loader: 'style!css!autoprefixer!sass'
       },{
         test: /\.css$/,
         loader: 'style!css!autoprefixer'
       },{
-        test: /\.(png|jpg|gif)$/,
-        loader: 'url?limit=2500000'
+        test: /\.(jpg|png|gif)$/i,
+        loader: "url-loader?limit=1000&name=img/[name]-[hash:10].[ext]"
+      },
+      // {
+      //   test: /\.html$/,
+      //   loader: 'html'
+      // },
+      {
+        test: path.join(config.path.src, '/assets/jquery'),
+        loader: 'expose?jQuery'
       },
       {
-        test: /\.html$/,
-        loader: 'html'
+        test: path.join(config.path.src, '/assets/handlebars'),
+        loader: 'expose?Handlebars'
       },
       {
-        test: /\.ttf$/,
-        loader: 'url?limit=100000'
+        test: /\.(woff|woff2|eot|ttf|svg)(\?.*$|$)/,
+        loader: 'url-loader?importLoaders=1&limit=1000&name=/fonts/[name].[ext]'
       }
     ]
   }
 }
+
+route.forEach(function(item) {
+  devConfig.entry[item] = path.join(config.path.app, '/components/'+ item +'/'+ item +'.js')
+
+  var htmlPlugin = new HtmlWebpackPlugin({
+    filename: item + '.html',
+    template: 'src/tmpl/' + item + '.html',
+    hash: true,
+    inject: 'body',
+    chunks: [ item ]
+  })
+
+  devConfig.plugins.push(htmlPlugin)
+})
+
+module.exports = devConfig
