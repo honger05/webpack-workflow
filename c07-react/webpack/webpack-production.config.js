@@ -12,7 +12,7 @@ var config = {
     src: path.resolve(__dirname, "src/www"),
     app: path.resolve(__dirname, "src/app"),
     dist: path.resolve(__dirname, "dist"),
-    pub: path.resolve(__dirname, "pub")
+    lib: path.resolve(__dirname, "lib")
   },
   defaultPath: "http://www.yy.com/",
   cdn: "http://www.yy.com"
@@ -24,7 +24,7 @@ var route = [
 
 var proConfig = {
   entry: {
-    common: ['jquery', 'handlebars']
+    common: ['jquery', 'handlebars', 'utils']
   },
   output: {
     path: distPath,
@@ -34,9 +34,9 @@ var proConfig = {
   resolve: {
     extensions: ["", ".js", ".jsx", ".es6", "css", "scss", "png", "jpg", "jpeg"],
     alias: {
-      'jquery': path.join(config.path.src, '/assets/jquery'),
-      'handlebars': path.join(config.path.src, '/assets/handlebars'),
-      'utils': path.join(config.path.src, '/utilities/utils')
+      'jquery': path.join(config.path.lib, '/jquery'),
+      'handlebars': path.join(config.path.lib, '/handlebars'),
+      'utils': path.join(config.path.lib, '/utils')
     }
   },
   devtool: 'source-map',
@@ -55,7 +55,7 @@ var proConfig = {
       Handlebars: "handlebars"
     }),
 
-    new ExtractTextPlugin('[name].css'),
+    new ExtractTextPlugin('styles/[name].css'),
 
     new webpack.NoErrorsPlugin(),
 
@@ -76,6 +76,10 @@ var proConfig = {
   module: {
     loaders: [
       {
+        test: /\.(jpg|png|gif)$/i,
+        loader: "url-loader?limit=1000&name=images/[name]-[hash:10].[ext]",
+      },
+      {
         test: /\.less$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
       },{
@@ -87,22 +91,18 @@ var proConfig = {
       },{
         test: /\.hbs$/,
         loader: 'handlebars'
-      },{
-        test: /\.(jpg|png|gif)$/i,
-        loader: "url-loader?limit=1000&name=img/[name]-[hash:10].[ext]",
-        include: path.resolve(config.path.src)
       },
-      // {
-      //   test: /\.html$/,
-      //   loader: 'html'
-      // },
       {
-        test: path.join(config.path.src, '/assets/handlebars'),
+        test: path.join(config.path.lib, '/handlebars'),
         loader: 'expose?Handlebars'
       },
       {
-        test: path.join(config.path.src, '/assets/jquery'),
+        test: path.join(config.path.lib, '/jquery'),
         loader: 'expose?jQuery'
+      },
+      {
+        test: path.join(config.path.lib, '/utils'),
+        loader: 'expose?Utils'
       },
       {
         test: /\.(woff|woff2|eot|ttf|svg)(\?.*$|$)/,

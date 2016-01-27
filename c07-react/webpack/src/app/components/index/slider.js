@@ -37,7 +37,7 @@ var Slider = Widget.extend({
     triggers.eq(prev).removeClass('active')
     triggers.eq(val).addClass('active')
 
-    var img = 'url(../assets/images/banner-bg-' + (val + 1) + '.jpg)'
+    var img = 'url(./assets/images/banner-bg-' + (val + 1) + '.jpg)'
     $('.mi-banner').css('backgroundImage', img)
     // panels.eq(prev).hide()
     // panels.eq(val).show()

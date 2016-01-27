@@ -12,7 +12,7 @@ var config = {
     src: path.resolve(__dirname, "src/www"),
     app: path.resolve(__dirname, "src/app"),
     dist: path.resolve(__dirname, "dist"),
-    pub: path.resolve(__dirname, "pub")
+    lib: path.resolve(__dirname, "lib")
   },
   defaultPath: "http://www.yy.com/",
   cdn: "http://www.yy.com"
@@ -25,7 +25,7 @@ var route = [
 var devConfig = {
   entry: {
     devServer: 'webpack/hot/dev-server',
-    common: ['jquery', 'handlebars']
+    common: ['jquery', 'handlebars', 'utils']
   },
   output: {
     path: distPath,
@@ -50,9 +50,9 @@ var devConfig = {
   resolve: {
     extensions: ["", ".js", ".jsx", ".es6", "css", "scss", "png", "jpg", "jpeg"],
     alias: {
-      'jquery': path.join(config.path.src, '/assets/jquery'),
-      'handlebars': path.join(config.path.src, '/assets/handlebars'),
-      'utils': path.join(config.path.src, '/utilities/utils')
+      'jquery': path.join(config.path.lib, '/jquery'),
+      'handlebars': path.join(config.path.lib, '/handlebars'),
+      'utils': path.join(config.path.lib, '/utils')
     }
   },
   plugins: [
@@ -96,19 +96,23 @@ var devConfig = {
         loader: 'style!css!autoprefixer'
       },{
         test: /\.(jpg|png|gif)$/i,
-        loader: "url-loader?limit=1000&name=img/[name]-[hash:10].[ext]"
+        loader: "url-loader?limit=1000&name=images/[name]-[hash:10].[ext]"
       },
       // {
       //   test: /\.html$/,
       //   loader: 'html'
       // },
       {
-        test: path.join(config.path.src, '/assets/jquery'),
+        test: path.join(config.path.lib, '/jquery'),
         loader: 'expose?jQuery'
       },
       {
-        test: path.join(config.path.src, '/assets/handlebars'),
+        test: path.join(config.path.lib, '/handlebars'),
         loader: 'expose?Handlebars'
+      },
+      {
+        test: path.join(config.path.lib, '/utils'),
+        loader: 'expose?Utils'
       },
       {
         test: /\.(woff|woff2|eot|ttf|svg)(\?.*$|$)/,
