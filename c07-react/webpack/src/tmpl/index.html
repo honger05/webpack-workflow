@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>首页</title>
-  <link rel="stylesheet" href="styles/common.css">
+  <%= require('html!./inc-meta.html') %>
 </head>
 <body>
-  <%= require('html!./header.html') %>
+  <%= require('html!./inc-topbar.html') %>
+  <%= require('html!./inc-navbar.html') %>
   <div class="mi-banner">
     <div class="mi-banner__polyfill"></div>
     <div class="container">
@@ -116,8 +117,6 @@
     </div>
   </div>
 
-  <%= require('html!./footer.html') %>
-
-  <script src="scripts/common.js"></script>
+  <%= require('html!./inc-footer.html') %>
 </body>
 </html>

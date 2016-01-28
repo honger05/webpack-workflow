@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>详情页</title>
-  <link rel="stylesheet" href="styles/common.css">
+  <%= require('html!./inc-meta.html') %>
 </head>
 <body>
-  <%= require('html!./header.html') %>
+  <%= require('html!./inc-topbar.html') %>
+  <%= require('html!./inc-navbar.html') %>
   <article class="">
     详细页
   </article>
-  <%= require('html!./footer.html') %>
-
-  <script src="scripts/common.js"></script>
+  <%= require('html!./inc-footer.html') %>
 </body>
 </html>

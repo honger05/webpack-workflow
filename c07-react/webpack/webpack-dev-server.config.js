@@ -12,7 +12,7 @@ var config = {
     src: path.resolve(__dirname, "src/www"),
     app: path.resolve(__dirname, "src/app"),
     dist: path.resolve(__dirname, "dist"),
-    lib: path.resolve(__dirname, "lib")
+    gallery: path.resolve(__dirname, "gallery")
   },
   defaultPath: "http://www.yy.com/",
   cdn: "http://www.yy.com"
@@ -50,9 +50,9 @@ var devConfig = {
   resolve: {
     extensions: ["", ".js", ".jsx", ".es6", "css", "scss", "png", "jpg", "jpeg"],
     alias: {
-      'jquery': path.join(config.path.lib, '/jquery'),
-      'handlebars': path.join(config.path.lib, '/handlebars'),
-      'utils': path.join(config.path.lib, '/utils')
+      'jquery': path.join(config.path.gallery, '/lib/jquery'),
+      'handlebars': path.join(config.path.gallery, '/lib/handlebars'),
+      'utils': path.join(config.path.gallery, '/utilities/utils')
     }
   },
   plugins: [
@@ -103,15 +103,15 @@ var devConfig = {
       //   loader: 'html'
       // },
       {
-        test: path.join(config.path.lib, '/jquery'),
+        test: path.join(config.path.gallery, '/lib/jquery'),
         loader: 'expose?jQuery'
       },
       {
-        test: path.join(config.path.lib, '/handlebars'),
+        test: path.join(config.path.gallery, '/lib/handlebars'),
         loader: 'expose?Handlebars'
       },
       {
-        test: path.join(config.path.lib, '/utils'),
+        test: path.join(config.path.gallery, '/utilities/utils'),
         loader: 'expose?Utils'
       },
       {
