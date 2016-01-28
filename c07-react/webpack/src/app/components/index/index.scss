@@ -138,9 +138,9 @@
 
 		a:hover,
     a.mi-active {
-			color: #fe595d;
+			color: $primary-color;
 			text-decoration: none;
-			border-bottom: 1px solid #fe595d;
+			border-bottom: 1px solid $primary-color;
 		}
 	}
 }
