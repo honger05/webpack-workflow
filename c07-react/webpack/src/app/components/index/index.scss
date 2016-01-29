@@ -1,11 +1,13 @@
 
 @import '../../common/variable.scss';
 
+$brand-bgc: #f9f9f9;
+
 .mi-banner {
 	width: 100%;
 	min-width: $min-width + 30;
 	height: 669px;
-	background-image: url(images/banner-bg-1.jpg);
+	background-image: url(img/banner-bg-1.jpg);
 	background-position: 50% 10%;
 	transition: background-image 1s;
 
@@ -41,6 +43,11 @@
 			padding: 14px 50px;
 			color: #fff;
 			outline: 0;
+			background-image: linear-gradient(to right, $primary-hover-color, $primary-color);
+
+			&:hover {
+				background-image: linear-gradient(to left, $primary-hover-color, $primary-color);
+			}
 		}
 
 		.qrcode {
@@ -48,7 +55,7 @@
 			margin-left: 20px;
 			width: 66px;
 			height: 66px;
-			background: url(images/qrcode2.png) no-repeat;
+			background: url(img/qrcode2.png) no-repeat;
 		}
 
 		.qrcode + sub {
@@ -108,11 +115,11 @@
 
 .mi-main {
 	width: 100%;
-	border: 1px solid purple;
+	padding: 30px 0;
+	background: url('./img/common-bg.jpg') no-repeat center 0;
 }
 
 .mi-titlebar {
-	margin-top: 30px;
 	width: 100%;
 	border-bottom: 1px solid #ddd;
 
@@ -161,19 +168,32 @@
 
 	.mi-figure:first-child {
 
-		&::after {
+		&::before {
 			content: '';
 			display: inline-block;
 			position: absolute;
 			right: 0;
 			top: 0;
-			width: 76px;
-			height: 76px;
-			background: url(images/tag.png) no-repeat;
+			width: 0;
+			height: 0;
+			border-width: 39px;
+			border-style: solid;
+			border-color: $primary-color $primary-color transparent transparent;
+		}
+
+		&::after {
+			content: '';
+			display: inline-block;
+			position: absolute;
+			right: 10px;
+			top: 15px;
+			width: 24px;
+			height: 24px;
+			background: url(./img/fire.png) no-repeat;
 		}
 
 		.mi-figcaption {
-			padding: 20px 10px;
+			padding: 30px 10px;
 		}
 	}
 
@@ -194,6 +214,7 @@
 
 .mi-claims-section {
 	margin: 30px 0;
+	padding: 30px 0;
 
 	img {
 		margin-left: 8px;
@@ -201,9 +222,52 @@
 }
 
 .other-logo-section {
-	margin: 60px 0;
+	margin: 40px 0;
 
-	img {
-		margin-left: 58px;
+	.brand-logo {
+		margin-left: 8px;
+		display: inline-block;
+		width: 188px;
+		height: 70px;
+	}
+
+	.brand-logo-allianz {
+		background: $brand-bgc url(./img/brand-allianz.png) no-repeat 50% 50%;
+	}
+
+	.brand-logo-aig {
+		background: $brand-bgc url(./img/brand-aig.png) no-repeat 50% 50%;
+	}
+
+	.brand-logo-zhongmin {
+		background: $brand-bgc url(./img/brand-zhongmin.gif) no-repeat 50% 50%;
+	}
+
+	.brand-logo-pinan {
+		background: $brand-bgc url(./img/brand-pinan.gif) no-repeat 50% 50%;
+	}
+
+	.brand-logo-renshou {
+		background: $brand-bgc url(./img/brand-renshou.png) no-repeat 50% 50%;
+	}
+
+	.brand-logo-taikang {
+		background: $brand-bgc url(./img/brand-taikang.png) no-repeat 50% 50%;
+	}
+
+	.brand-logo-taipinyang {
+		background: $brand-bgc url(./img/brand-taipinyang.png) no-repeat 50% 50%;
+	}
+
+	.brand-logo-zongchen {
+		background: $brand-bgc url(./img/brand-zongchen.png) no-repeat 50% 50%;
+	}
+
+	.brand-logo-ing {
+		background: $brand-bgc url(./img/brand-ing.png) no-repeat 50% 50%;
+	}
+
+	.brand-logo-taipin {
+		background: $brand-bgc url(./img/brand-taipin.png) no-repeat 50% 50%;
 	}
 }
