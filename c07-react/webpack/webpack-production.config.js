@@ -39,7 +39,7 @@ var proConfig = {
       'utils': path.join(config.path.gallery, '/utilities/utils')
     }
   },
-  devtool: 'source-map',
+  // devtool: 'source-map',
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: "common",
@@ -77,7 +77,7 @@ var proConfig = {
     loaders: [
       {
         test: /\.(jpg|png|gif)$/i,
-        loader: "url-loader?limit=1000&name=images/[name]-[hash:10].[ext]",
+        loader: "url-loader?limit=1000&name=img/[name]-[hash:10].[ext]",
       },
       {
         test: /\.less$/,

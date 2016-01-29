@@ -96,7 +96,7 @@ var devConfig = {
         loader: 'style!css!autoprefixer'
       },{
         test: /\.(jpg|png|gif)$/i,
-        loader: "url-loader?limit=1000&name=images/[name]-[hash:10].[ext]"
+        loader: "url-loader?limit=1000&name=img/[name]-[hash:10].[ext]"
       },
       // {
       //   test: /\.html$/,
