@@ -1,12 +1,19 @@
 
 @import './base.css';
-@import './button.scss';
-@import './topbar-xinye.scss';
-@import './navbar-xinye.scss';
+@import './variable.scss';
+@import './mixins.scss';
+@import './utilities.scss';
+@import './widgets/button.scss';
+@import './widgets/breadcrumb.scss';
+@import './widgets/titlebar.scss';
+
+@import './topbar.scss';
+@import './navbar.scss';
 @import './footer.scss';
 
+
 .mi-container {
-  width: $min-width;
+  width: $container-width;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -17,10 +24,7 @@
 
   .mi-navbar {
     background: #333;
-  }
-
-  .mi-main {
-    padding-top: 77px;
+    position: relative;
   }
 
 }

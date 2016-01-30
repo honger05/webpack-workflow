@@ -6,11 +6,40 @@
   <%= require('html!./inc-meta.html') %>
 </head>
 <body>
-  <%= require('html!./inc-topbar-xinye.html') %>
+  <%= require('html!./inc-topbar.html') %>
   <div class="mi-body">
-    <%= require('html!./inc-navbar-xinye.html') %>
-    <div class="mi-main">
-      详细页
+    <%= require('html!./inc-navbar.html') %>
+    <div class="mi-container">
+      <ol class="mi-breadcrumb">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">旅行险</a></li>
+        <li class="mi-active">美亚 “乐悠游” 境外旅行保障计划</li>
+      </ol>
+      <div class="mi-product">
+        <div class="mi-product__gallery mi-hot">
+          <img src="assets/images/product-gallery-1.jpg" alt="">
+        </div>
+        <div class="mi-product__meta">
+
+        </div>
+      </div>
+      <div class="mi-detail">
+        <div class="mi-titlebar fn-clear">
+          <h2 class="mi-titlebar__title">
+            <img src="assets/images/hot-recommand.png" alt="热门推荐" />
+          </h2>
+          <div class="mi-titlebar__nav">
+            <ul class="fn-clear">
+              <li><a class="mi-active" href="">产品特色</a></li>
+              <li><a href="">保障内容</a></li>
+              <li><a href="">投保示例</a></li>
+              <li><a href="">温馨提示</a></li>
+              <li><a href="">Q&A</a></li>
+              <li><a href="">流程展示</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <%= require('html!./inc-footer.html') %>

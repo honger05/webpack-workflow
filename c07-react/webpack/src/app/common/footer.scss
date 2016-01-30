@@ -1,6 +1,4 @@
 
-@import 'variable.scss';
-
 .mi-footer {
 
   &__main {
@@ -51,11 +49,10 @@
       padding: 0 10px;
       font-size: 14px;
       line-height: 1;
-      border-left: 1px solid #333;
     }
 
-    li:first-child {
-      border-left: 0;
+    li + li {
+      border-left: 1px solid #333;
     }
 
     a {

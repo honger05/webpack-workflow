@@ -1,0 +1,27 @@
+
+
+.mi-hot {
+  &::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-width: 39px;
+    border-style: solid;
+    border-color: $primary-color $primary-color transparent transparent;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    width: 24px;
+    height: 24px;
+    background: url(./img/fire.png) no-repeat;
+  }
+}

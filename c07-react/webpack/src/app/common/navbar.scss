@@ -1,12 +1,12 @@
 
-@import './variable.scss';
+// @import './variable.scss';
 
 .mi-navbar {
 	position: absolute;
 	width: 100%;
-	min-width: $min-width + 30;
+	min-width: $container-width + 30;
 	height: 78px;
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0.1);
 
 	&__header {
 		float: left;
@@ -33,17 +33,19 @@
 			font-size: 16px;
 			display: block;
 			font-weight: 500;
-			color: #fff;
+			color: rgba(255, 255, 255, 0.5);
 			padding: 26px 24px;
+			border-bottom: 3px solid transparent;
 
 			&:hover {
 				text-decoration: none;
-				background: rgba(0, 0, 0, 0.5);
+				background: rgba(0, 0, 0, 0.3);
+				color: #e4e3e3;
 			}
 
 			&.active {
 				color: $primary-color;
-				border-bottom: 2px solid $primary-color;
+				border-bottom-color: $primary-color;
 			}
 		}
 	}
@@ -54,16 +56,33 @@
 
 		.contact {
 			display: table-cell;
-			color: #fff;
-			padding: 18px 25px;
-			background: rgba(0, 0, 0, 0.3);
+			width: 260px;
+			height: 77px;
+			background: rgba(0, 0, 0, 0.2) url(./img/service.png) no-repeat 50% 50%;
 		}
 
 		.qrcode {
+			position: relative;
 			display: table-cell;
 			width: 100px;
-			height: 78px;
-			background: url(./img/qrcode.png) no-repeat 50% 50%;
+			height: 77px;
+			cursor: pointer;
+			background: rgba(0, 0, 0, 0.3) url(./img/qrcode.png) no-repeat 50% 50%;
+
+			&:hover .qrcode-code {
+				height: 160px;
+			}
+		}
+
+		.qrcode-code {
+			position: absolute;
+			box-sizing: border-box;
+			top: 78px;
+			left: -32px;
+			width: 160px;
+			height: 0;
+			background: rgba(0, 0, 0, 0.3) url(./img/navbar-qrcode.png) no-repeat center;
+			transition: height .5s;
 		}
 
 	}
