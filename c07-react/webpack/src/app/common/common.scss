@@ -11,6 +11,20 @@
   margin: 0 auto;
 }
 
+.mi-body {
+  width: 100%;
+  height: 900px;
+
+  .mi-navbar {
+    background: #333;
+  }
+
+  .mi-main {
+    padding-top: 77px;
+  }
+
+}
+
 .fn-fl {
   float: left;
 }

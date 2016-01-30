@@ -46,7 +46,7 @@ $brand-bgc: #f9f9f9;
 			background-image: linear-gradient(to right, $primary-hover-color, $primary-color);
 
 			&:hover {
-				background-image: linear-gradient(to left, $primary-hover-color, $primary-color);
+				background-image: linear-gradient(to left, $primary-hover-color, $primary-hover-color);
 			}
 		}
 
@@ -159,6 +159,16 @@ $brand-bgc: #f9f9f9;
 		position: relative;
 		float: left;
 		margin-left: 10px;
+		cursor: pointer;
+
+		&:hover .mi-figcover {
+			height: 100%;
+		}
+
+		&:hover .mi-figcaption,
+		&:hover .mi-figtop {
+			display: none;
+		}
 	}
 
 	.mi-figure:nth-child(4),
@@ -195,6 +205,56 @@ $brand-bgc: #f9f9f9;
 		.mi-figcaption {
 			padding: 30px 10px;
 		}
+
+	}
+
+	.mi-figcover {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 0;
+		overflow: hidden;
+		color: #fff;
+		text-align: center;
+		background: rgba(0, 0, 0, 0.5);
+		transition: height 0.5s;
+	}
+
+	.mi-figcover-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 250px;
+		height: 140px;
+		margin-top: -70px;
+		margin-left: -125px;
+
+		h1 {
+			font-weight: bold;
+			font-size: 18px;
+		}
+
+		h2 {
+			font-size: 22px;
+			font-weight: bold;
+			color: $primary-color;
+		}
+
+		p {
+			margin-top: 10px;
+		}
+	}
+
+	.mi-figtop {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		color: #fff;
+
+		h2 {
+			font-size: 20px;
+			font-weight: bold;
+		}
 	}
 
 	.mi-figcaption {
@@ -213,8 +273,7 @@ $brand-bgc: #f9f9f9;
 }
 
 .mi-claims-section {
-	margin: 30px 0;
-	padding: 30px 0;
+	margin: 30px 0 0 0;
 
 	img {
 		margin-left: 8px;
@@ -225,7 +284,7 @@ $brand-bgc: #f9f9f9;
 	margin: 40px 0;
 
 	.brand-logo {
-		margin-left: 8px;
+		margin-left: 6px;
 		display: inline-block;
 		width: 188px;
 		height: 70px;
