@@ -46,13 +46,12 @@
 
     li {
       float: left;
-      padding: 0 10px;
-      font-size: 14px;
-      line-height: 1;
     }
 
-    li + li {
-      border-left: 1px solid #333;
+    li + li::before {
+      padding: 0 8px;
+      color: #ccc;
+      content: "|";
     }
 
     a {

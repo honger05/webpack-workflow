@@ -1,6 +1,4 @@
 
-// @import './variable.scss';
-
 .mi-navbar {
 	position: absolute;
 	width: 100%;
@@ -77,6 +75,7 @@
 		.qrcode-code {
 			position: absolute;
 			box-sizing: border-box;
+			z-index: 111;
 			top: 78px;
 			left: -32px;
 			width: 160px;

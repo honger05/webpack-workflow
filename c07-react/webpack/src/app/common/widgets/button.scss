@@ -54,11 +54,14 @@
 }
 
 a.mi-btn-primary {
+	padding: 10px 40px;
 	color: #fff;
+	@include primary-gradient;
 
 	&:visited,
 	&:hover,
 	&:active {
 		color: #fff;
+		@include primary-hover-gradient;
 	}
 }
