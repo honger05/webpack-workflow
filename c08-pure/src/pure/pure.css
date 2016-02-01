@@ -2,5 +2,5 @@
 @import "./normalize.css";
 @import "./base.css";
 
-@import "./buttons-core.css";
-@import "./buttons.css";
+@import "./button/button.css";
+@import "./form/form.css"
