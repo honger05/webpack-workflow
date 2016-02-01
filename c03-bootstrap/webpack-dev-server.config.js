@@ -18,7 +18,7 @@ var config = {
   cdn: "http://www.honger05.com"
 }
 
-var route = ['index', 'detail']
+var route = ['index', 'detail', 'input']
 
 var devConfig = {
   entry: {
