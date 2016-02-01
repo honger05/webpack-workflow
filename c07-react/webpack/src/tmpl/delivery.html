@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>详情页</title>
+  <%= require('html!./inc-meta.html') %>
+</head>
+<body>
+  <%= require('html!./inc-topbar.html') %>
+  <div class="mi-body">
+    <%= require('html!./inc-navbar.html') %>
+    <input type="hidden" name="navbar" value="1">
+    <div class="mi-main">
+      <div class="mi-container">
+        <ol class="mi-breadcrumb">
+          <li><a href="/">首页</a></li>
+          <li><a href="/">旅行险</a></li>
+          <li class="mi-active">美亚 “乐悠游” 境外旅行保障计划</li>
+        </ol>
+        <div class="mi-delivery">
+          <h1>美亚 “乐悠游” 境外旅行保障计划</h1>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= require('html!./inc-footer.html') %>
+</body>
+</html>

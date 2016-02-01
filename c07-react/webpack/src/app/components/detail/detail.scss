@@ -103,13 +103,13 @@ $gallery-width: 342px;
   }
 
   .mi-box:hover,
-  .mi-box.mi-action {
+  .mi-box.mi-active {
     color: #fff;
     outline-color: #ff8c00;
     background: linear-gradient(to right, #ff8c00, #ffac00);
   }
 
-  .mi-box.mi-action {
+  .mi-box.mi-active {
     &::after {
       content: "\221A";
       position: absolute;
