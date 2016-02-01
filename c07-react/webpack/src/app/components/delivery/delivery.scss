@@ -1,0 +1,46 @@
+
+@import '../../common/mixins.scss';
+@import '../../common/variable.scss';
+
+.mi-delivery {
+
+  h1 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .mi-panel {
+    width: 100%;
+    border: 1px solid #e7e7e7;
+    margin-bottom: 20px;
+
+    &__hd {
+      position: relative;
+      padding: 10px 15px;
+      background: #f3fbfe;
+    }
+
+    &__hd.mi-em {
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-width: 10px;
+        border-style: solid;
+        border-color: $primary-color $primary-color transparent transparent;
+      }
+    }
+
+    &__bd {
+      padding: 10px;
+      background: #fff;
+    }
+
+  }
+}
