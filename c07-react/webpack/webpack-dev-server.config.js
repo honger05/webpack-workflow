@@ -126,9 +126,9 @@ route.forEach(function(item) {
   devConfig.entry[item] = path.join(config.path.app, '/components/'+ item +'/'+ item +'.js')
 
   var htmlPlugin = new HtmlWebpackPlugin({
+    scope: item,
     filename: item + '.html',
     template: 'src/tmpl/' + item + '.html',
-    hash: true,
     inject: 'body',
     chunks: [ item ]
   })
