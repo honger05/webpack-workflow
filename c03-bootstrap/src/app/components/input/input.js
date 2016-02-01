@@ -1,2 +1,2 @@
 
-require('../../hui/less/hui.less')
+require('../../../hui/less/hui.less')

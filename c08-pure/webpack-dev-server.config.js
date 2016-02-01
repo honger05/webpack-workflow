@@ -41,7 +41,7 @@ var devConfig = {
     devtool: 'eval',
     hot: true,
     inline: true,
-    port: 3000
+    port: 4000
   },
   devtool: 'eval',
   resolve: {

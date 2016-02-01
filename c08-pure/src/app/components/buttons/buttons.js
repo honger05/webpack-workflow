@@ -1,2 +1,2 @@
-require('./buttons-core.css')
-require('./buttons.css')
+
+require('../../../pure/pure.css')
