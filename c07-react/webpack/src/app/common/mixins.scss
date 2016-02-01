@@ -1,0 +1,19 @@
+
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: " ";
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+@mixin primary-gradient {
+  background-image: linear-gradient(to left, $primary-color, $primary-hover-color);
+}
+
+@mixin primary-hover-gradient {
+  background-image: linear-gradient(to left, $primary-hover-color, $primary-hover-color);
+}

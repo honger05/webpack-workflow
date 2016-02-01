@@ -1,11 +1,14 @@
 
 @import '../../common/variable.scss';
+@import '../../common/mixins.scss';
+
+$brand-bgc: #f9f9f9;
 
 .mi-banner {
 	width: 100%;
-	min-width: $min-width + 30;
+	min-width: $container-width + 30;
 	height: 669px;
-	background-image: url(banner-bg-1.jpg);
+	background-image: url(img/banner-bg-1.jpg);
 	background-position: 50% 10%;
 	transition: background-image 1s;
 
@@ -48,7 +51,7 @@
 			margin-left: 20px;
 			width: 66px;
 			height: 66px;
-			background: url(./qrcode2.png) no-repeat;
+			background: url(img/qrcode2.png) no-repeat;
 		}
 
 		.qrcode + sub {
@@ -106,66 +109,104 @@
 
 }
 
-.mi-main {
-	width: 100%;
-	border: 1px solid purple;
-}
-
-.mi-titlebar {
-	margin-top: 30px;
-	width: 100%;
-	border-bottom: 1px solid #ddd;
-
-	&__title {
-		float: left;
-	}
-
-	&__nav {
-		margin-left: 160px;
-
-		li {
-			float: left;
-		}
-
-		a {
-			display: inline-block;
-			padding: 15px 0;
-			margin: 0 20px;
-			color: #909090;
-			border-bottom: 1px solid transparent;
-			transition: all .3s;
-		}
-
-		a:hover {
-			color: #fe595d;
-			text-decoration: none;
-			border-bottom: 1px solid #fe595d;
-		}
-	}
-}
-
 .mi-hot-section {
 	margin: 30px 0;
 
-	div {
+	.mi-figure {
+		position: relative;
+		float: left;
+		margin-left: 10px;
+		cursor: pointer;
 
-		img {
-			float: left;
-			margin-left: 10px;
+		&:hover .mi-figcover {
+			height: 100%;
 		}
 
-		img:first-child {
+		&:hover .mi-figcaption,
+		&:hover .mi-figtop {
+			display: none;
+		}
+	}
+
+	.mi-figure:nth-child(4),
+	.mi-figure:nth-child(5) {
+		margin-top: 5px;
+	}
+
+	.mi-figure:first-child {
+
+		.mi-figcaption {
+			padding: 30px 10px;
 		}
 
-		img:last-child,
-		img:nth-child(4) {
-			margin-top: 11px;
+	}
+
+	.mi-figcover {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 0;
+		overflow: hidden;
+		color: #fff;
+		text-align: center;
+		background: rgba(0, 0, 0, 0.5);
+		transition: height 0.5s;
+	}
+
+	.mi-figcover-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 250px;
+		height: 140px;
+		margin-top: -70px;
+		margin-left: -125px;
+
+		h1 {
+			font-weight: bold;
+			font-size: 18px;
+		}
+
+		h2 {
+			font-size: 22px;
+			font-weight: bold;
+			color: $primary-color;
+		}
+
+		p {
+			margin-top: 10px;
+		}
+	}
+
+	.mi-figtop {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		color: #fff;
+
+		h2 {
+			font-size: 20px;
+			font-weight: bold;
+		}
+	}
+
+	.mi-figcaption {
+		position: absolute;
+		width: 100%;
+		bottom: 5px;
+		background: rgba(0, 0, 0, 0.2);
+		color: #fff;
+		padding: 10px;
+		box-sizing: border-box;
+
+		sub {
+			color: #ccc;
 		}
 	}
 }
 
 .mi-claims-section {
-	margin: 30px 0;
+	margin: 30px 0 0 0;
 
 	img {
 		margin-left: 8px;
@@ -173,9 +214,52 @@
 }
 
 .other-logo-section {
-	margin: 60px 0;
+	margin: 40px 0;
 
-	img {
-		margin-left: 58px;
+	.brand-logo {
+		margin-left: 6px;
+		display: inline-block;
+		width: 188px;
+		height: 70px;
+	}
+
+	.brand-logo-allianz {
+		background: $brand-bgc url(./img/brand-allianz.png) no-repeat 50% 50%;
+	}
+
+	.brand-logo-aig {
+		background: $brand-bgc url(./img/brand-aig.png) no-repeat 50% 50%;
+	}
+
+	.brand-logo-zhongmin {
+		background: $brand-bgc url(./img/brand-zhongmin.gif) no-repeat 50% 50%;
+	}
+
+	.brand-logo-pinan {
+		background: $brand-bgc url(./img/brand-pinan.gif) no-repeat 50% 50%;
+	}
+
+	.brand-logo-renshou {
+		background: $brand-bgc url(./img/brand-renshou.png) no-repeat 50% 50%;
+	}
+
+	.brand-logo-taikang {
+		background: $brand-bgc url(./img/brand-taikang.png) no-repeat 50% 50%;
+	}
+
+	.brand-logo-taipinyang {
+		background: $brand-bgc url(./img/brand-taipinyang.png) no-repeat 50% 50%;
+	}
+
+	.brand-logo-zongchen {
+		background: $brand-bgc url(./img/brand-zongchen.png) no-repeat 50% 50%;
+	}
+
+	.brand-logo-ing {
+		background: $brand-bgc url(./img/brand-ing.png) no-repeat 50% 50%;
+	}
+
+	.brand-logo-taipin {
+		background: $brand-bgc url(./img/brand-taipin.png) no-repeat 50% 50%;
 	}
 }

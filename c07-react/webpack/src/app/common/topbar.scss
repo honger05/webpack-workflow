@@ -1,16 +1,16 @@
 
-@import 'variable.scss';
+// @import 'variable.scss';
 
 .mi-topbar {
-  background: linear-gradient(to bottom, #fdfdfd, #ffffff);
+  background: linear-gradient(to bottom, #fbfbfb, #e7e7e7);
 
   &__logo {
     float: left;
     margin: 7px 0 6px 0;
-    width: 92px;
-    height: 27px;
+    width: 123px;
+    height: 24px;
     text-indent: -9999px;
-    background: url(./img/topbar-logo.png) no-repeat;
+    background: url(./img/xinye-logo.png) no-repeat;
   }
 
   &__login {

@@ -2,15 +2,110 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title><%= htmlWebpackPlugin.options.title %></title>
+  <title>详情页</title>
+  <%= require('html!./inc-meta.html') %>
 </head>
 <body>
-  <%= require('html!./header.html') %>
-  <article class="">
-    详细页
-  </article>
-  <%= require('html!./footer.html') %>
-
-  <script src="scripts/common.js"></script>
+  <%= require('html!./inc-topbar.html') %>
+  <div class="mi-body">
+    <%= require('html!./inc-navbar.html') %>
+    <div class="mi-main">
+      <div class="mi-container">
+        <ol class="mi-breadcrumb">
+          <li><a href="/">首页</a></li>
+          <li><a href="/">旅行险</a></li>
+          <li class="mi-active">美亚 “乐悠游” 境外旅行保障计划</li>
+        </ol>
+        <div class="mi-product">
+          <div class="mi-product__gallery mi-hot">
+            <img src="assets/images/product-gallery-1.jpg" alt="">
+          </div>
+          <div class="mi-product__meta">
+            <div class="mi-product__meta-title">
+              <h1>美亚 “乐悠游” 境外旅行保障计划<sub>(保障范围：保全球)</sub></h1>
+              <p>power by <img src="assets/images/brand-aig.png" alt=""></p>
+            </div>
+            <div class="mi-product__meta-content">
+              <dl>
+                <dt>选择保险天数</dt>
+                <dd>
+                  <div class="mi-selection-box">
+                    <span class="mi-box">1-7 天</span>
+                    <span class="mi-box">8-10 天</span>
+                    <span class="mi-box">11-15 天</span>
+                    <span class="mi-box">16-18 天</span>
+                    <span class="mi-box">19-24 天</span>
+                    <span class="mi-box">25-30 天</span>
+                    <span class="mi-box">31-45 天</span>
+                    <span class="mi-box">46-60 天</span>
+                    <span class="mi-box">61-90 天</span>
+                    <span class="mi-box mi-action">91-180 天</span>
+                    <span class="mi-box">全年保障</span>
+                    <span class="mi-box">自选时间</span>
+                  </div>
+                </dd>
+              </dl>
+              <dl>
+                <dt>选择保险计划</dt>
+                <dd>
+                  <div class="mi-selection-box">
+                    <span class="mi-box mi-action">白银计划</span>
+                    <span class="mi-box">黄金计划</span>
+                    <span class="mi-box">白金计划</span>
+                  </div>
+                </dd>
+              </dl>
+            </div>
+            <div class="mi-product__meta-footer">
+              <dl>
+                <dt class="mi-tit">保费</dt>
+                <dd>
+                  <em class="mi-yen">￥</em>
+                  <span class="mi-price">180</span>
+                </dd>
+              </dl>
+              <div class="mi-pos-btn">
+                <a href="#" class="mi-btn mi-btn-primary">立即投保</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mi-detail">
+          <div class="mi-titlebar">
+            <div class="mi-titlebar__title">
+              <h2>关于 Ta 的</h2>
+              <h3>ABOUT IT</h3>
+            </div>
+            <div class="mi-titlebar__nav">
+              <ul>
+                <li><a class="mi-active" href="">产品特色</a></li>
+                <li><a href="">保障内容</a></li>
+                <li><a href="">投保示例</a></li>
+                <li><a href="">温馨提示</a></li>
+                <li><a href="">Q&A</a></li>
+                <li><a href="">流程展示</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mi-detail__content">
+          <img src="assets/images/product-tese.jpg" alt="产品特色">
+          <div class="mi-gallery">
+            <img src="assets/images/product-case.jpg" alt="产品特色">
+          </div>
+          <div class="mi-gallery">
+            <img src="assets/images/product-content.jpg" alt="保障内容">
+          </div>
+          <div class="mi-gallery">
+            <img src="assets/images/product-tips.jpg" alt="保障内容">
+          </div>
+          <div class="mi-gallery">
+            <a href="#" class="mi-btn mi-btn-primary">立即投保</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= require('html!./inc-footer.html') %>
 </body>
 </html>

@@ -2,27 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title><%= htmlWebpackPlugin.options.title %></title>
+  <title>首页</title>
+  <%= require('html!./inc-meta.html') %>
 </head>
 <body>
-  <%= require('html!./header.html') %>
+  <%= require('html!./inc-topbar.html') %>
+  <%= require('html!./inc-navbar.html') %>
   <div class="mi-banner">
     <div class="mi-banner__polyfill"></div>
-    <div class="container">
+    <div class="mi-container">
       <div class="mi-banner__main">
         <h1>车行万里路 · 人车保平安</h1>
         <h2>Dealership miles · car insurance and peace</h2>
         <div class="mi-banner__action fn-clear">
-          <button class="mi-btn mi-btn-primary">立即参与</button>
+          <a href="detail.html" class="mi-btn mi-btn-primary">立即参与</a>
           <span class="qrcode"></span>
           <sub>扫一扫购买!</sub>
         </div>
         <div class="mi-banner__nav">
           <ul>
-            <li><img src="/assets/images/pic1.png" alt="" /></li>
-            <li><img src="/assets/images/pic2.png" alt="" /></li>
-            <li><img src="/assets/images/pic3.png" alt="" /></li>
-            <li><img src="/assets/images/pic4.jpg" alt="" /></li>
+            <li><img src="assets/images/pic1.png" alt="" /></li>
+            <li><img src="assets/images/pic2.png" alt="" /></li>
+            <li><img src="assets/images/pic3.png" alt="" /></li>
+            <li><img src="assets/images/pic4.jpg" alt="" /></li>
           </ul>
         </div>
       </div>
@@ -30,63 +32,162 @@
   </div><!-- end of banner -->
 
   <div class="mi-main">
-    <div class="container">
+    <div class="mi-container">
 
-      <div class="mi-titlebar fn-clear">
-        <h2 class="mi-titlebar__title">
-          <img src="assets/images/recommand.png" alt="热门推荐" />
-        </h2>
+      <div class="mi-titlebar">
+        <div class="mi-titlebar__title">
+          <h2>热门推荐</h2>
+          <h3>HOT RECOMMENDED</h3>
+        </div>
         <div class="mi-titlebar__nav">
-          <ul class="fn-clear">
-            <li><a href="">女性专区</a></li>
-            <li><a href="">商旅服务</a></li>
-            <li><a href="">人身意外</a></li>
-            <li><a href="">个性定制</a></li>
+          <ul>
+            <li><a class="mi-active" href="detail.html">商旅人士</a></li>
+            <li><a href="detail.html">幸福家庭</a></li>
+            <li><a href="detail.html">魅力女性</a></li>
+            <li><a href="detail.html">都市生活</a></li>
+            <li><a href="detail.html">滚吧 · 倒霉君</a></li>
           </ul>
         </div>
       </div>
       <div class="mi-hot-section">
         <div class="fn-clear">
-          <img src="assets/images/1.png" alt="美丽险" />
-          <img src="assets/images/2.png" alt="美丽险" />
-          <img src="assets/images/3.png" alt="美丽险" />
-          <img src="assets/images/4.png" alt="美丽险" />
-          <img src="assets/images/5.png" alt="美丽险" />
+          <div class="mi-figure mi-hot">
+            <div class="mi-figtop">
+              <h1>美丽险</h1>
+              <h2>¥ 166</h2>
+            </div>
+            <img src="assets/images/1.png" alt="" />
+            <div class="mi-figcaption">
+              <p>做回美丽的自己，为美丽护航</p>
+              <sub>DO U BEST!BEAUTIFUL GIRL</sub>
+            </div>
+            <a href="detail.html">
+              <div class="mi-figcover">
+                <div class="mi-figcover-content">
+                  <h1>美丽险</h1>
+                  <h2>¥ 166</h2>
+                  <p>做回美丽的自己，为美丽护航</p>
+                  <sub>DO U BEST!BEAUTIFUL GIRL</sub>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="mi-figure">
+            <div class="mi-figtop">
+              <p>退货险</p>
+              <h2>¥ 8</h2>
+            </div>
+            <img src="assets/images/2.png" alt="" />
+            <div class="mi-figcaption">
+              <p>不怕受罪，想退就退</p>
+              <sub>不用担心你的运费我买单</sub>
+            </div>
+            <a href="detail.html">
+              <div class="mi-figcover">
+                <div class="mi-figcover-content">
+                  <h1>退货险</h1>
+                  <h2>¥ 8</h2>
+                  <p>不怕受罪，想退就退</p>
+                  <sub>不用担心你的运费我买单</sub>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="mi-figure">
+            <div class="mi-figtop">
+              <p>玫瑰之约</p>
+              <h2>¥ 888</h2>
+            </div>
+            <img src="assets/images/3.png" alt="" />
+            <div class="mi-figcaption">
+              <p>美丽不落单，男人送上门！</p>
+              <sub>剩女的福利</sub>
+            </div>
+            <a href="detail.html">
+              <div class="mi-figcover">
+                <div class="mi-figcover-content">
+                  <h1>玫瑰之约</h1>
+                  <h2>¥ 888</h2>
+                  <p>美丽不落单，男人送上门！</p>
+                  <sub>剩女的福利</sub>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="mi-figure">
+            <div class="mi-figtop">
+              <p>爱情险</p>
+              <h2>¥ 28</h2>
+            </div>
+            <img src="assets/images/4.png" alt="" />
+            <div class="mi-figcaption">
+              <p>失恋了？</p>
+              <sub>不用担心你的运费我买单</sub>
+            </div>
+            <a href="detail.html">
+              <div class="mi-figcover">
+                <div class="mi-figcover-content">
+                  <h1>爱情险</h1>
+                  <h2>¥ 28</h2>
+                  <p>失恋了？</p>
+                  <sub>不用担心你的运费我买单</sub>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="mi-figure">
+            <div class="mi-figtop">
+              <p>退货险</p>
+              <h2>¥ 22</h2>
+            </div>
+            <img src="assets/images/5.png" alt="" />
+            <div class="mi-figcaption">
+              <p>做回美丽的自己，为美丽护航</p>
+              <sub>DO U BEST!BEAUTIFUL GIRL</sub>
+            </div>
+            <a href="detail.html">
+              <div class="mi-figcover">
+                <div class="mi-figcover-content">
+                  <h1>退货险</h1>
+                  <h2>¥ 22</h2>
+                  <p>做回美丽的自己，为美丽护航</p>
+                  <sub>DO U BEST!BEAUTIFUL GIRL</sub>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
 
-      <div class="mi-titlebar fn-clear">
-        <h2 class="mi-titlebar__title">
-          <img src="assets/images/claim.png" alt="热门推荐" />
-        </h2>
-        <div class="mi-titlebar__nav">
-          <ul class="fn-clear">
-            <li><a href="">专区理赔</a></li>
-            <li><a href="">福利理赔</a></li>
-            <li><a href="">特殊通道</a></li>
-          </ul>
+      <div class="mi-titlebar">
+        <div class="mi-titlebar__title">
+          <h2>理赔流程</h2>
+          <h3>CLAIMS PROCESS</h3>
         </div>
       </div>
       <div class="mi-claims-section">
-        <div class="fn-clear">
-          <img src="assets/images/6.png" alt="美丽险" />
-          <img src="assets/images/7.png" alt="美丽险" />
-          <img src="assets/images/8.png" alt="美丽险" />
-        </div>
+          <img src="assets/images/claim-progress.png" alt="理赔指引" />
       </div>
 
       <div class="other-logo-section">
-        <img src="assets/images/logo2.png" alt="" />
-        <img src="assets/images/logo2.png" alt="" />
-        <img src="assets/images/logo3.png" alt="" />
-        <img src="assets/images/logo4.png" alt="" />
-        <img src="assets/images/logo5.png" alt="" />
+        <p>
+          <i class="brand-logo brand-logo-allianz"></i>
+          <i class="brand-logo brand-logo-aig"></i>
+          <i class="brand-logo brand-logo-zhongmin"></i>
+          <i class="brand-logo brand-logo-pinan"></i>
+          <i class="brand-logo brand-logo-renshou"></i>
+        </p>
+        <p>
+          <i class="brand-logo brand-logo-taikang"></i>
+          <i class="brand-logo brand-logo-taipinyang"></i>
+          <i class="brand-logo brand-logo-zongchen"></i>
+          <i class="brand-logo brand-logo-ing"></i>
+          <i class="brand-logo brand-logo-taipin"></i>
+        </p>
       </div>
     </div>
   </div>
 
-  <%= require('html!./footer.html') %>
-
-  <script src="scripts/common.js"></script>
+  <%= require('html!./inc-footer.html') %>
 </body>
 </html>
