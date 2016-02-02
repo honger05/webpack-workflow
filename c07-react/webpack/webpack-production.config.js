@@ -19,7 +19,7 @@ var config = {
 }
 
 var route = [
-  'index', 'detail'
+  'index', 'detail', 'delivery', 'confirm'
 ]
 
 var proConfig = {

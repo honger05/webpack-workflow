@@ -3,11 +3,16 @@
   border: 1px solid #e7e7e7;
   margin-bottom: 20px;
 
+  & &{
+    border: 0;
+  }
+
   &__hd {
     position: relative;
     padding: 10px 15px;
     background: #f3fbfe;
   }
+
 
   &__hd.mi-em {
 
@@ -15,8 +20,8 @@
       content: '';
       display: block;
       position: absolute;
-      top: 0;
-      right: 0;
+      top: -1px;
+      right: -1px;
       width: 0;
       height: 0;
       border-width: 10px;
@@ -26,8 +31,36 @@
   }
 
   &__bd {
+    position: relative;
     padding: 10px 0;
     background: #fff;
+    @include clearfix;
   }
 
+  &__bd.mi-water-logo {
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 374px;
+      height: 230px;
+      bottom: 20px;
+      right: -100px;
+      background: url('./img/water-logo.png') no-repeat center;
+    }
+  }
+
+  &--warning {
+
+    .mi-panel__hd {
+      background: #fefdf3;
+    }
+
+    .mi-panel__hd.mi-em {
+      &::after {
+        border-color: #ffa300 #ffa300 transparent transparent;
+      }
+    }
+  }
 }

@@ -10,4 +10,68 @@
     margin-bottom: 20px;
   }
 
+  dl {
+    @include clearfix;
+    padding: 10px 20px;
+
+    dt {
+      float: left;
+      width: 90px;
+      text-align: right;
+      font-weight: 600;
+    }
+
+    dd {
+      margin-left: 10px;
+      float: left;
+    }
+  }
+
+  .mi-vator {
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .mi-myself {
+    padding: 40px 0 20px 130px;
+  }
+
+  .mi-card {
+    width: 317px;
+    height: 380px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+
+    &__hd {
+      padding: 10px 15px;
+      color: #fff;
+      background: $primary-color;
+    }
+
+    &__bd {
+      background: #fff;
+      padding: 5px 0 0 0;
+    }
+  }
+
+  .mi-p-1 {
+    padding: 10px 0 25px 50px;
+
+    span {
+      color: $primary-color;
+    }
+
+    em {
+      display: inline-block;
+      font-size: 24px;
+      color: $primary-color;
+    }
+  }
+
 }

@@ -18,6 +18,14 @@
   background-image: linear-gradient(to left, $primary-hover-color, $primary-hover-color);
 }
 
+@mixin warning-gradient {
+  background-image: linear-gradient(to left, $warning-color, $warning-hover-color);
+}
+
+@mixin warning-hover-gradient {
+  background-image: linear-gradient(to left, $warning-hover-color, $warning-hover-color);
+}
+
 
 @mixin trangle {
   &::after {

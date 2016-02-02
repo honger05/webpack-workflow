@@ -97,17 +97,17 @@
           </div>
           <!-- end of panel -->
 
-          
+
           <div class="mi-panel">
             <div class="mi-panel__hd mi-em">
               填写被保人信息(最多可录入3个被保险人)
             </div>
             <div class="mi-panel__bd">
               <form class="mi-form">
-                
+
                 <div class="mi-row">
                   <div class="mi-input-group">
-                    <div class="mi-input-group-addon"><i class="fa fa-credit-card"></i></div>
+                    <div class="mi-input-group-addon"><i class="fa fa-link"></i></div>
                     <div class="mi-form-label">与被保人关系
                       <label class="mi-form-radio">
                         <input type="radio" name="relation" checked>
@@ -263,13 +263,13 @@
                       </div>
                     </div>
                     <div class="mi-row">
-                      <p>有效期限：自 2016-01-29 至 2016-02-04 共 7 天（终保日期根据录入起保时间及保险天数带出）</p>
-                      <p>产品名称：美亚 “乐悠游” 境外旅行保障计划</p>
-                      <p>有效份数：1份（根据被保人数量计算）</p>
+                      <p class="mi-p-1">有效期限：自 <span>2016-01-29</span> 至 <span>2016-02-04</span> 共 <em>7</em> 天（终保日期根据录入起保时间及保险天数带出）</p>
+                      <p class="mi-p-1">产品名称：美亚 “乐悠游” 境外旅行保障计划</p>
+                      <p class="mi-p-1">有效份数：<em>1</em>份（根据被保人数量计算）</p>
                     </div>
                     <div class="mi-row">
                       <div class="mi-input-group">
-                        <div class="mi-input-group-addon"><i class="fa fa-link"></i></div>
+                        <div class="mi-input-group-addon"><i class="fa fa-paperclip"></i></div>
                         <div class="mi-form-label">邮寄发票吗？
                           <label class="mi-form-radio">
                             <input type="radio" name="fp" checked>
@@ -282,6 +282,34 @@
                         </div>
                       </div>
                     </div>
+
+                    <div class="mi-fapiao">
+                      <div class="mi-row">
+                        <div class="mi-input-group">
+                          <div class="mi-input-group-addon"><i class="fa fa-user"></i></div>
+                          <input type="text" class="mi-form-control" placeholder="收件人签名">
+                        </div>
+                      </div>
+                      <div class="mi-row">
+                        <div class="mi-input-group">
+                          <div class="mi-input-group-addon"><i class="fa fa-car"></i></div>
+                          <input type="text" class="mi-form-control" placeholder="配送地址">
+                        </div>
+                      </div>
+                      <div class="mi-row">
+                        <div class="mi-input-group">
+                          <div class="mi-input-group-addon"><i class="fa fa-envelope"></i></div>
+                          <input type="text" class="mi-form-control" placeholder="邮编">
+                        </div>
+                      </div>
+                      <div class="mi-row">
+                        <div class="mi-input-group">
+                          <div class="mi-input-group-addon"><i class="fa fa-phone"></i></div>
+                          <input type="text" class="mi-form-control" placeholder="手机号码">
+                        </div>
+                      </div>
+                    </div>
+
                   </form>
                 </div>
               </div>
@@ -294,6 +322,19 @@
       </div>
     </div>
   </div>
+
+  <div class="mi-price-footer">
+    <div class="mi-container">
+      <div class="mi-price-footer__detail">
+        <p>美亚 “乐悠游” 境外旅行保障计划</p>
+        <h1>￥180</h1>
+      </div>
+      <div class="mi-price-footer__preview">
+        <a href="confirm.html" class="mi-btn mi-btn-primary">投保预览</a>
+      </div>
+    </div>
+  </div>
+
   <%= require('html!./inc-footer.html') %>
 </body>
 </html>

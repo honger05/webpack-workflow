@@ -65,3 +65,27 @@ a.mi-btn-primary {
 		@include primary-hover-gradient;
 	}
 }
+
+.mi-btn-warning {
+	font-family: Arail;
+	color: #fff;
+	border: 1px solid $warning-color;
+	background-color: $warning-color;
+
+	&:hover {
+		background-color: $warning-hover-color;
+	}
+}
+
+a.mi-btn-warning {
+	padding: 10px 40px;
+	color: #fff;
+	@include warning-gradient;
+
+	&:visited,
+	&:hover,
+	&:active {
+		color: #fff;
+		@include warning-hover-gradient;
+	}
+}
