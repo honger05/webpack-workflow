@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>详情页</title>
+  <title>资料填写</title>
   <%= require('html!./inc-meta.html') %>
 </head>
 <body>
@@ -19,63 +19,277 @@
         </ol>
         <div class="mi-delivery">
           <h1>美亚 “乐悠游” 境外旅行保障计划</h1>
+
           <div class="mi-panel">
             <div class="mi-panel__hd mi-em">
               我是投保人
             </div>
             <div class="mi-panel__bd">
-              <div class="mi-row">
-                <input type="text" name="name" value="">
-              </div>
-              <div class="mi-row">
-                <input type="text" name="name" value="">
-              </div>
-              <div class="mi-row">
-                <input type="text" name="name" value="">
-              </div>
-              <div class="mi-row">
-                <input type="text" name="name" value="">
-              </div>
+              <form class="mi-form">
+                <div class="mi-row">
+                  <div class="mi-input-group">
+                    <div class="mi-input-group-addon"><i class="fa fa-user"></i></div>
+                    <input type="text" class="mi-form-control" placeholder="姓名(例如:张三)">
+                  </div>
+                </div>
+                <div class="mi-row">
+                  <div class="mi-input-group">
+                    <div class="mi-input-group-addon"><i class="fa fa-credit-card"></i></div>
+                    <div class="mi-form-label">选择证件类型
+                      <label class="mi-form-radio">
+                        <input type="radio" name="credit" checked>
+                        <span>身份证</span>
+                      </label>
+                      <label class="mi-form-radio">
+                        <input type="radio" name="credit">
+                        <span>护照</span>
+                      </label>
+                      <label class="mi-form-radio">
+                        <input type="radio" name="credit">
+                        <span>军官证</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="mi-row">
+                  <div class="mi-input-group">
+                    <div class="mi-input-group-addon"><i class="fa fa-credit-card"></i></div>
+                    <input type="text" class="mi-form-control" placeholder="您的证件号码">
+                  </div>
+                </div>
+                <div class="mi-row">
+                  <div class="mi-input-group">
+                    <div class="mi-input-group-addon"><i class="fa fa-birthday-cake"></i></div>
+                    <input type="text" class="mi-form-control" placeholder="生日">
+                  </div>
+                </div>
+
+                <div class="mi-row">
+                  <div class="mi-input-group">
+                    <div class="mi-input-group-addon"><i class="fa fa-transgender"></i></div>
+                    <div class="mi-form-label">男孩or女孩？
+                      <label class="mi-form-radio">
+                        <input type="radio" name="gender" checked>
+                        <span>男</span>
+                      </label>
+                      <label class="mi-form-radio">
+                        <input type="radio" name="gender">
+                        <span>女</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mi-row">
+                  <div class="mi-input-group">
+                    <div class="mi-input-group-addon"><i class="fa fa-phone"></i></div>
+                    <input type="text" class="mi-form-control" placeholder="手机号码">
+                  </div>
+                </div>
+                <div class="mi-row">
+                  <div class="mi-input-group">
+                    <div class="mi-input-group-addon"><i class="fa fa-envelope-o"></i></div>
+                    <input type="text" class="mi-form-control" placeholder="电子邮箱">
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
+          <!-- end of panel -->
+
+          
           <div class="mi-panel">
             <div class="mi-panel__hd mi-em">
-              我是投保人
+              填写被保人信息(最多可录入3个被保险人)
             </div>
             <div class="mi-panel__bd">
-              <div class="mi-row">
-                <input type="text" name="name" value="">
-              </div>
-              <div class="mi-row">
-                <input type="text" name="name" value="">
-              </div>
-              <div class="mi-row">
-                <input type="text" name="name" value="">
-              </div>
-              <div class="mi-row">
-                <input type="text" name="name" value="">
-              </div>
+              <form class="mi-form">
+                
+                <div class="mi-row">
+                  <div class="mi-input-group">
+                    <div class="mi-input-group-addon"><i class="fa fa-credit-card"></i></div>
+                    <div class="mi-form-label">与被保人关系
+                      <label class="mi-form-radio">
+                        <input type="radio" name="relation" checked>
+                        <span>本人</span>
+                      </label>
+                      <label class="mi-form-radio">
+                        <input type="radio" name="relation">
+                        <span>父母</span>
+                      </label>
+                      <label class="mi-form-radio">
+                        <input type="radio" name="relation">
+                        <span>配偶</span>
+                      </label>
+                      <label class="mi-form-radio">
+                        <input type="radio" name="relation">
+                        <span>子女</span>
+                      </label>
+                      <label class="mi-form-radio">
+                        <input type="radio" name="relation">
+                        <span>其他</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mi-row">
+                  <div class="mi-input-group">
+                    <div class="mi-input-group-addon"><i class="fa fa-user"></i></div>
+                    <input type="text" class="mi-form-control" placeholder="姓名(例如:张三)">
+                  </div>
+                </div>
+
+                <div class="mi-row">
+                  <div class="mi-input-group">
+                    <div class="mi-input-group-addon"><i class="fa fa-credit-card"></i></div>
+                    <div class="mi-form-label">选择证件类型
+                      <label class="mi-form-radio">
+                        <input type="radio" name="r-credit" checked>
+                        <span>身份证</span>
+                      </label>
+                      <label class="mi-form-radio">
+                        <input type="radio" name="r-credit">
+                        <span>护照</span>
+                      </label>
+                      <label class="mi-form-radio">
+                        <input type="radio" name="r-credit">
+                        <span>军官证</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mi-row">
+                  <div class="mi-input-group">
+                    <div class="mi-input-group-addon"><i class="fa fa-credit-card"></i></div>
+                    <input type="text" class="mi-form-control" placeholder="您的证件号码">
+                  </div>
+                </div>
+                <div class="mi-row">
+                  <div class="mi-input-group">
+                    <div class="mi-input-group-addon"><i class="fa fa-birthday-cake"></i></div>
+                    <input type="text" class="mi-form-control" placeholder="生日">
+                  </div>
+                </div>
+
+                <div class="mi-row">
+                  <div class="mi-input-group">
+                    <div class="mi-input-group-addon"><i class="fa fa-transgender"></i></div>
+                    <div class="mi-form-label">男孩or女孩？
+                      <label class="mi-form-radio">
+                        <input type="radio" name="gender" checked>
+                        <span>男</span>
+                      </label>
+                      <label class="mi-form-radio">
+                        <input type="radio" name="gender">
+                        <span>女</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mi-row">
+                  <div class="mi-input-group">
+                    <div class="mi-input-group-addon"><i class="fa fa-phone"></i></div>
+                    <input type="text" class="mi-form-control" placeholder="手机号码">
+                  </div>
+                </div>
+                <div class="mi-row">
+                  <div class="mi-input-group">
+                    <div class="mi-input-group-addon"><i class="fa fa-envelope-o"></i></div>
+                    <input type="text" class="mi-form-control" placeholder="电子邮箱">
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
+          <!-- end of sec panel  -->
+
+
           <div class="mi-panel">
             <div class="mi-panel__hd mi-em">
-              我是投保人
+              目的地
             </div>
             <div class="mi-panel__bd">
-              <div class="mi-row">
-                <input type="text" name="name" value="">
+              <form class="mi-form">
+                <div class="mi-row">
+                  <div class="mi-input-group">
+                    <div class="mi-input-group-addon"><i class="fa fa-send"></i></div>
+                    <div class="mi-form-label">选择目的地
+                      <label class="mi-form-radio">
+                        <input type="radio" name="dest" checked>
+                        <span>中国</span>
+                      </label>
+                      <label class="mi-form-radio">
+                        <input type="radio" name="dest">
+                        <span>日本</span>
+                      </label>
+                      <label class="mi-form-radio">
+                        <input type="radio" name="dest">
+                        <span>韩国</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+              <div class="mi-panel">
+                <div class="mi-panel__hd">
+                  受益人
+                </div>
+                <div class="mi-panel__bd">
+                  <form class="mi-form">
+                    <div class="mi-row">
+                      <div class="mi-input-group">
+                        <div class="mi-input-group-addon"><i class="fa fa-user"></i></div>
+                        <input type="text" class="mi-form-control" placeholder="填写受益人">
+                      </div>
+                    </div>
+                  </form>
+                </div>
               </div>
-              <div class="mi-row">
-                <input type="text" name="name" value="">
+
+              <div class="mi-panel">
+                <div class="mi-panel__hd">
+                  投保明细
+                </div>
+                <div class="mi-panel__bd">
+                  <form class="mi-form">
+                    <div class="mi-row">
+                      <div class="mi-input-group">
+                        <div class="mi-input-group-addon"><i class="fa fa-calendar"></i></div>
+                        <input type="text" class="mi-form-control" placeholder="起保时间">
+                      </div>
+                    </div>
+                    <div class="mi-row">
+                      <p>有效期限：自 2016-01-29 至 2016-02-04 共 7 天（终保日期根据录入起保时间及保险天数带出）</p>
+                      <p>产品名称：美亚 “乐悠游” 境外旅行保障计划</p>
+                      <p>有效份数：1份（根据被保人数量计算）</p>
+                    </div>
+                    <div class="mi-row">
+                      <div class="mi-input-group">
+                        <div class="mi-input-group-addon"><i class="fa fa-link"></i></div>
+                        <div class="mi-form-label">邮寄发票吗？
+                          <label class="mi-form-radio">
+                            <input type="radio" name="fp" checked>
+                            <span>是</span>
+                          </label>
+                          <label class="mi-form-radio">
+                            <input type="radio" name="fp">
+                            <span>否</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
               </div>
-              <div class="mi-row">
-                <input type="text" name="name" value="">
-              </div>
-              <div class="mi-row">
-                <input type="text" name="name" value="">
-              </div>
+
             </div>
           </div>
+
+
         </div>
       </div>
     </div>

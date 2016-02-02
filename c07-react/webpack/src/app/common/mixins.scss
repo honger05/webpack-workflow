@@ -17,3 +17,19 @@
 @mixin primary-hover-gradient {
   background-image: linear-gradient(to left, $primary-hover-color, $primary-hover-color);
 }
+
+
+@mixin trangle {
+  &::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-width: 5px;
+    border-color: $primary-color $primary-color transparent transparent;
+    border-style: solid;
+  }
+}

@@ -1,4 +1,6 @@
 
+require('font-awesome/scss/font-awesome.scss')
+
 var x = $('input[name=navbar]').val()
 $('.mi-navbar__nav li').each(function(index, li) {
   $(li).removeClass('mi-active')

@@ -1,18 +1,20 @@
 
-@import './base.css';
 @import './variable.scss';
 @import './mixins.scss';
 @import './utilities.scss';
-@import './layout.scss';
-@import './grid.scss';
+
+@import './core/base.css';
+@import './core/layout.scss';
+@import './core/grid.scss';
+@import './core/form.scss';
 
 @import './widgets/button.scss';
 @import './widgets/breadcrumb.scss';
 @import './widgets/titlebar.scss';
 
-@import './topbar.scss';
-@import './navbar.scss';
-@import './footer.scss';
+@import './widgets/topbar.scss';
+@import './widgets/navbar.scss';
+@import './widgets/footer.scss';
 
 
 .mi-gallery {
