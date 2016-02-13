@@ -27,7 +27,7 @@
 }
 
 
-@mixin trangle {
+@mixin trangle($width: 5px, $color: $primary-color) {
   &::after {
     content: '';
     position: absolute;
@@ -36,8 +36,8 @@
     right: 0;
     width: 0;
     height: 0;
-    border-width: 5px;
-    border-color: $primary-color $primary-color transparent transparent;
+    border-width: $width;
+    border-color: $color $color transparent transparent;
     border-style: solid;
   }
 }

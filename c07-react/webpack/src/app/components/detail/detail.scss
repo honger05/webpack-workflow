@@ -110,13 +110,8 @@ $gallery-width: 342px;
   }
 
   .mi-box.mi-active {
-    &::after {
-      content: "\221A";
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      color: red;
-    }
+    @include trangle(5px, #fc5b60);
+    outline-color: #fc5b60;
   }
 
   .mi-tit {

@@ -59,14 +59,14 @@ var proConfig = {
 
     new webpack.NoErrorsPlugin(),
 
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      },
-      mangle: {
-        except: ['jQuery', '$', 'exports', 'require']
-      }
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: false
+    //   },
+    //   mangle: {
+    //     except: ['jQuery', '$', 'exports', 'require']
+    //   }
+    // }),
 
     new TransferWebpackPlugin([
       {from: 'www'}
