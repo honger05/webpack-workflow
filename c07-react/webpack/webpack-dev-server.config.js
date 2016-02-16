@@ -25,7 +25,7 @@ var route = [
 var devConfig = {
   entry: {
     devServer: 'webpack/hot/dev-server',
-    common: ['jquery', 'handlebars', 'utils', 'hui']
+    common: ['jquery', 'handlebars', 'common', 'hui']
   },
   output: {
     path: distPath,
@@ -52,7 +52,7 @@ var devConfig = {
     alias: {
       'jquery': path.join(config.path.gallery, '/lib/jquery'),
       'handlebars': path.join(config.path.gallery, '/lib/handlebars'),
-      'utils': path.join(config.path.gallery, '/utils/interface'),
+      'common': path.join(config.path.gallery, '/common/interface'),
       'hui': path.join(config.path.gallery, '/hui/hui')
     }
   },
@@ -96,6 +96,14 @@ var devConfig = {
         loader: "url-loader?limit=1000&name=img/[name]-[hash:10].[ext]"
       },
       {
+        test: /\.handlebars$/,
+        loader: 'handlebars-loader'
+      },
+      {
+        test: /\.hbs$/,
+        loader: path.resolve(__dirname, '/loaders/hbs-loader')
+      },
+      {
         test: path.join(config.path.gallery, '/lib/jquery'),
         loader: 'expose?jQuery'
       },
@@ -104,8 +112,8 @@ var devConfig = {
         loader: 'expose?Handlebars'
       },
       {
-        test: path.join(config.path.gallery, '/utils/interface'),
-        loader: 'expose?Utils'
+        test: path.join(config.path.gallery, '/common/interface'),
+        loader: 'expose?Cmn'
       },
       {
         test: path.join(config.path.gallery, '/hui/hui'),

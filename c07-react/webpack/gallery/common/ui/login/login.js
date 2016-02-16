@@ -1,0 +1,3 @@
+
+
+alert(require('./login.hbs'))

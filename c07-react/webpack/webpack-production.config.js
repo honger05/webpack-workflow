@@ -24,7 +24,7 @@ var route = [
 
 var proConfig = {
   entry: {
-    common: ['jquery', 'handlebars', 'utils', 'hui']
+    common: ['jquery', 'handlebars', 'common', 'hui']
   },
   output: {
     path: distPath,
@@ -36,7 +36,7 @@ var proConfig = {
     alias: {
       'jquery': path.join(config.path.gallery, '/lib/jquery'),
       'handlebars': path.join(config.path.gallery, '/lib/handlebars'),
-      'utils': path.join(config.path.gallery, '/utils/interface'),
+      'common': path.join(config.path.gallery, '/common/interface'),
       'hui': path.join(config.path.gallery, '/hui/hui')
     }
   },
@@ -89,9 +89,14 @@ var proConfig = {
       },{
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader')
-      },{
+      },
+      {
+        test: /\.handlebars$/,
+        loader: 'handlebars-loader'
+      },
+      {
         test: /\.hbs$/,
-        loader: 'handlebars'
+        loader: path.resolve(__dirname, '/loaders/hbs-loader')
       },
       {
         test: path.join(config.path.gallery, '/lib/handlebars'),
@@ -102,8 +107,8 @@ var proConfig = {
         loader: 'expose?jQuery'
       },
       {
-        test: path.join(config.path.gallery, '/utils/interface'),
-        loader: 'expose?Utils'
+        test: path.join(config.path.gallery, '/common/interface'),
+        loader: 'expose?Cmn'
       },
       {
         test: path.join(config.path.gallery, '/hui/hui'),
