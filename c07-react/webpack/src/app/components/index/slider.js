@@ -1,9 +1,5 @@
 
-var Widget = require('../core/widget')
-var $ = require('jquery')
-var _ = require('underscore')
-
-var Slider = Widget.extend({
+var Slider = Hui.Widget.extend({
   attrs: {
     triggers: {
       value: '.mi-banner__nav li',

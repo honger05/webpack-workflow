@@ -1,5 +1,4 @@
 
-require('../../common/common.scss')
 require('./index.scss')
 
 var Slider = require('./slider.js')

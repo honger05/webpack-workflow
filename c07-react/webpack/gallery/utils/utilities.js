@@ -1,6 +1,4 @@
 
-require('font-awesome/scss/font-awesome.scss')
-
 var x = $('input[name=navbar]').val()
 $('.mi-navbar__nav li').each(function(index, li) {
   $(li).removeClass('mi-active')
@@ -9,7 +7,7 @@ $('.mi-navbar__nav li').each(function(index, li) {
   }
 })
 
-var Utils = {
+var Utilities = {
 
   log: function(msg) {
     console.log(msg)
@@ -17,4 +15,4 @@ var Utils = {
 
 }
 
-module.exports = Utils
+module.exports = Utilities

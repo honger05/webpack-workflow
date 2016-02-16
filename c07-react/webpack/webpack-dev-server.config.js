@@ -25,7 +25,7 @@ var route = [
 var devConfig = {
   entry: {
     devServer: 'webpack/hot/dev-server',
-    common: ['jquery', 'handlebars', 'utils']
+    common: ['jquery', 'handlebars', 'utils', 'hui']
   },
   output: {
     path: distPath,
@@ -52,7 +52,8 @@ var devConfig = {
     alias: {
       'jquery': path.join(config.path.gallery, '/lib/jquery'),
       'handlebars': path.join(config.path.gallery, '/lib/handlebars'),
-      'utils': path.join(config.path.gallery, '/utilities/utils')
+      'utils': path.join(config.path.gallery, '/utils/interface'),
+      'hui': path.join(config.path.gallery, '/hui/hui')
     }
   },
   plugins: [
@@ -81,10 +82,6 @@ var devConfig = {
   ],
   module: {
     loaders: [
-      // {
-      //   test: /\.(js|jsx)$/,
-      //   loader: 'babel'
-      // },
       {
         test: /\.less$/,
         loader: 'style!css!autoprefixer!less'
@@ -98,10 +95,6 @@ var devConfig = {
         test: /\.(jpg|png|gif)$/i,
         loader: "url-loader?limit=1000&name=img/[name]-[hash:10].[ext]"
       },
-      // {
-      //   test: /\.html$/,
-      //   loader: 'html'
-      // },
       {
         test: path.join(config.path.gallery, '/lib/jquery'),
         loader: 'expose?jQuery'
@@ -111,8 +104,12 @@ var devConfig = {
         loader: 'expose?Handlebars'
       },
       {
-        test: path.join(config.path.gallery, '/utilities/utils'),
+        test: path.join(config.path.gallery, '/utils/interface'),
         loader: 'expose?Utils'
+      },
+      {
+        test: path.join(config.path.gallery, '/hui/hui'),
+        loader: 'expose?Hui'
       },
       {
         test: /\.(woff|woff2|eot|ttf|svg)(\?.*$|$)/,
