@@ -25,7 +25,7 @@ var route = [
 var devConfig = {
   entry: {
     devServer: 'webpack/hot/dev-server',
-    common: ['jquery', 'handlebars', 'common', 'hui']
+    common: ['jquery', 'handlebars', 'hui', 'common']
   },
   output: {
     path: distPath,
@@ -52,8 +52,8 @@ var devConfig = {
     alias: {
       'jquery': path.join(config.path.gallery, '/lib/jquery'),
       'handlebars': path.join(config.path.gallery, '/lib/handlebars'),
-      'common': path.join(config.path.gallery, '/common/interface'),
-      'hui': path.join(config.path.gallery, '/hui/hui')
+      'hui': path.join(config.path.gallery, '/hui/hui'),
+      'common': path.join(config.path.gallery, '/common/interface')
     }
   },
   plugins: [
@@ -101,7 +101,7 @@ var devConfig = {
       },
       {
         test: /\.hbs$/,
-        loader: path.resolve(__dirname, '/loaders/hbs-loader')
+        loader: path.resolve(__dirname, 'loaders/hbs-loader')
       },
       {
         test: path.join(config.path.gallery, '/lib/jquery'),

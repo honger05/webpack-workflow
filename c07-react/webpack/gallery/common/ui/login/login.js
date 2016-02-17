@@ -1,3 +1,2 @@
 
 
-alert(require('./login.hbs'))

@@ -24,7 +24,7 @@ var route = [
 
 var proConfig = {
   entry: {
-    common: ['jquery', 'handlebars', 'common', 'hui']
+    common: ['jquery', 'handlebars', 'hui', 'common']
   },
   output: {
     path: distPath,
@@ -36,8 +36,8 @@ var proConfig = {
     alias: {
       'jquery': path.join(config.path.gallery, '/lib/jquery'),
       'handlebars': path.join(config.path.gallery, '/lib/handlebars'),
-      'common': path.join(config.path.gallery, '/common/interface'),
-      'hui': path.join(config.path.gallery, '/hui/hui')
+      'hui': path.join(config.path.gallery, '/hui/hui'),
+      'common': path.join(config.path.gallery, '/common/interface')
     }
   },
   // devtool: 'source-map',
