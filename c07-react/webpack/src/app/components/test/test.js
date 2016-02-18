@@ -1,4 +1,10 @@
 
+var loginDialog = new Cmn.UI.LoginDialog()
+
+loginDialog.show()
+
+
+
 var o = new Hui.Overlay({
     template: "<div class='overlay'>目标元素1</div>",
     parentNode: '#c',
