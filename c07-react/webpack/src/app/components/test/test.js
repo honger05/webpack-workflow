@@ -1,7 +1,17 @@
 
-var loginDialog = new Cmn.UI.LoginDialog()
+Cmn.UI.LoginDialog.show()
 
-loginDialog.show()
+setTimeout(function() {
+  Cmn.UI.LoginDialog.hide()
+}, 1000)
+
+
+var Dialog = Hui.Dialog;
+new Dialog({
+    trigger: '#example1',
+    height: '100px',
+    content: '传入了字符串'
+});
 
 
 
