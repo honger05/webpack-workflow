@@ -1,21 +1,20 @@
-.ui-dialog {
+.mi-dialog {
     background-color: rgba(0, 0, 0, 0.5);
     border: none;
     FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#88000000, endColorstr=#88000000);
     padding: 6px;
     outline: none;
-    /* http://ued.taobao.com/blog/2011/04/onfocus-this-blur/ */
 }
 
-.ui-dialog-content {
+.mi-dialog-content {
     background: #fff;
 }
 
-:root .ui-dialog {
+:root .mi-dialog {
     FILTER: none\9;
 }
 
-.ui-dialog-close {
+.mi-dialog-close {
     color: #999;
     cursor: pointer;
     display: block;
@@ -30,12 +29,12 @@
     top: 16px;
     z-index: 10;
 }
-.ui-dialog-close:hover {
+.mi-dialog-close:hover {
     color: #666;
     text-shadow: 0 0 2px #aaa;
 }
 
-.ui-dialog-title {
+.mi-dialog-title {
     height:45px;
     font-size:16px;
     font-family:'微软雅黑', '黑体', Arial;
@@ -52,29 +51,29 @@
     background: linear-gradient(top, #fcfcfc, #f9f9f9);
 }
 
-.ui-dialog-container {
+.mi-dialog-container {
     padding:15px 20px 20px;
     font-size: 12px;
 }
 
-.ui-dialog-message {
+.mi-dialog-message {
     margin-bottom:15px;
 }
 
-.ui-dialog-operation {
+.mi-dialog-operation {
     zoom:1;
 }
 
-.ui-dialog-confirm, .ui-dialog-cancel {
+.mi-dialog-confirm, .mi-dialog-cancel {
     display: inline;
 }
 
-.ui-dialog-operation .ui-dialog-confirm {
+.mi-dialog-operation .mi-dialog-confirm {
     margin-right: 4px;
 }
 
-.ui-dialog-button-orange,
-.ui-dialog-button-white {
+.mi-dialog-button-orange,
+.mi-dialog-button-white {
     display: inline-block;
     *display: inline;
     *zoom: 1;
@@ -92,28 +91,28 @@
     background-image: none;
 }
 
-a.ui-dialog-button-orange:hover,
-a.ui-dialog-button-white:hover {
+a.mi-dialog-button-orange:hover,
+a.mi-dialog-button-white:hover {
     text-decoration: none;
 }
 
-.ui-dialog-button-orange {
+.mi-dialog-button-orange {
     color: #fff;
     border:1px solid #d66500;
     background-color: #f57403;
 }
 
-.ui-dialog-button-orange:hover {
+.mi-dialog-button-orange:hover {
     background-color: #fb8318;
 }
 
-.ui-dialog-button-white {
+.mi-dialog-button-white {
     border:1px solid #afafaf;
     background-color: #f3f3f3;
     color: #777;
 }
 
-.ui-dialog-button-white:hover {
+.mi-dialog-button-white:hover {
     border: 1px solid #8e8e8e;
     background-color: #fcfbfb;
     color: #676d70;

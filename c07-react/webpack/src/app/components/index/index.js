@@ -10,4 +10,6 @@ var slider = new Slider({
 
 slider.render()
 
+Cmn.UI.LoginDialog.show()
+
 // alert(slider)

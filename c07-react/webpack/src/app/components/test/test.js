@@ -1,9 +1,9 @@
 
 Cmn.UI.LoginDialog.show()
 
-setTimeout(function() {
-  Cmn.UI.LoginDialog.hide()
-}, 1000)
+// setTimeout(function() {
+//   Cmn.UI.LoginDialog.hide()
+// }, 1000)
 
 
 var Dialog = Hui.Dialog;

@@ -11,13 +11,13 @@ var LoginDialog = Hui.Overlay.extend({
 
     template: require('./login.hbs'),
 
-    classPrefix: 'ui-dialog',
+    classPrefix: 'mi-dialog',
 
     hasMask: true,
 
     width: 500,
 
-    height: 300,
+    height: null,
 
     zIndex: 999,
 
@@ -44,6 +44,8 @@ var LoginDialog = Hui.Overlay.extend({
     LoginDialog.superclass.setup.call(this)
 
     this._setupMask()
+    this._setupFocus()
+    this._setupKeyEvents()
   },
 
   _setupMask: function() {
@@ -98,9 +100,33 @@ var LoginDialog = Hui.Overlay.extend({
         }
       }
     }
-  }
+  },
+
+  // 绑定元素聚焦状态
+  _setupFocus: function () {
+    this.after('show', function () {
+      this.element.focus();
+    });
+    this.after('hide', function () {
+      // 关于网页中浮层消失后的焦点处理
+      // http://www.qt06.com/post/280/
+      this.activeTrigger && this.activeTrigger.focus();
+    });
+  },
+
+  // 绑定键盘事件，ESC关闭窗口
+  _setupKeyEvents: function () {
+    this.delegateEvents($(document), 'keyup.esc', function (e) {
+      if (e.keyCode === 27) {
+        this.get('visible') && this.hide();
+      }
+    });
+  },
 
 })
+
+
+// helpers
 
 function erase(item, array) {
   var index = -1
