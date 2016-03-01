@@ -1,9 +1,14 @@
 {
   "dependencies": {
+    "angular": "^1.5.0",
+    "angular-resource": "^1.5.0",
+    "angular-route": "^1.5.0",
     "font-awesome": "^4.5.0",
     "handlebars": "^4.0.5",
     "jquery": "^2.2.0",
     "raw-loader": "^0.5.1",
+    "todomvc-app-css": "^2.0.4",
+    "todomvc-common": "^1.0.2",
     "underscore": "^1.8.3"
   },
   "scripts": {

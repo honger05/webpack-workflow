@@ -1,3 +1,4 @@
+
 /*global angular */
 
 /**
@@ -30,3 +31,9 @@ angular.module('todomvc', ['ngRoute', 'ngResource'])
 				redirectTo: '/'
 			});
 	});
+
+
+	require('./controllers/TodoCtrl')
+	require('./services/todoStorage')
+	require('./directives/todoFocus')
+	require('./directives/todoEscape')
