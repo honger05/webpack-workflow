@@ -5,12 +5,9 @@
     <title>aaaaaaaa</title>
     <%= require('html!./inc-meta.html') %>
   </head>
-  <body>
-    <ion-nav-bar class="bar-positive">
-      <ion-nav-back-button></ion-nav-back-button>
-    </ion-nav-bar>
+  <body ng-controller="myCtrl">
 
-    <ion-nav-view></ion-nav-view>
+    <ez-clock></ez-clock>
 
     <%= require('html!./inc-footer.html') %>
   </body>

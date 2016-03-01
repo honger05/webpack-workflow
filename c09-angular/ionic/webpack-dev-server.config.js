@@ -19,13 +19,13 @@ var config = {
 }
 
 var route = [
-  'index'
+  'index', 'template'
 ]
 
 var devConfig = {
   entry: {
     devServer: 'webpack/hot/dev-server',
-    common: ['common']
+    common: ['handlebars', 'common']
   },
   output: {
     path: distPath,
