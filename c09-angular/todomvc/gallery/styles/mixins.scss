@@ -1,0 +1,43 @@
+
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: " ";
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+@mixin primary-gradient {
+  background-image: linear-gradient(to left, $primary-color, $primary-hover-color);
+}
+
+@mixin primary-hover-gradient {
+  background-image: linear-gradient(to left, $primary-hover-color, $primary-hover-color);
+}
+
+@mixin warning-gradient {
+  background-image: linear-gradient(to left, $warning-color, $warning-hover-color);
+}
+
+@mixin warning-hover-gradient {
+  background-image: linear-gradient(to left, $warning-hover-color, $warning-hover-color);
+}
+
+
+@mixin trangle($width: 5px, $color: $primary-color) {
+  &::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-width: $width;
+    border-color: $color $color transparent transparent;
+    border-style: solid;
+  }
+}
