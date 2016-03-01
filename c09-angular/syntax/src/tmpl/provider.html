@@ -2,12 +2,13 @@
 <html ng-app="honger">
   <head>
     <meta charset="utf-8">
-    <title>index</title>
+    <title>service 服务组件</title>
     <%= require('html!./inc-meta.html') %>
   </head>
   <body>
-    <hg-clock></hg-clock>
-
+    <button onclick="doCalc();">3+4=?</button>
+  	<div id="result"></div>
+    
     <%= require('html!./inc-footer.html') %>
   </body>
 </html>

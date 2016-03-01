@@ -5,8 +5,9 @@
     <title>index</title>
     <%= require('html!./inc-meta.html') %>
   </head>
-  <body>
-    <hg-clock></hg-clock>
+  <body ng-app="ezstuff" ng-init="sb = {name:'somebody',gender:'male',age:28}">
+    <ez-namecard-editor data="sb"></ez-namecard-editor>
+    <div ez-logger data="sb"></div>
 
     <%= require('html!./inc-footer.html') %>
   </body>

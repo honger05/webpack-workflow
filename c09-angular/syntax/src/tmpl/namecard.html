@@ -2,14 +2,25 @@
 <html ng-app="honger">
   <head>
     <meta charset="utf-8">
-    <title>aaaaaaaa</title>
+    <title>controller 从 data 到 view 绑定</title>
+    <%= require('html!./inc-meta.html') %>
   </head>
   <body>
 
-    <div ng-controller="myCtrl">
+    <div ng-controller="ezController">
+      <button ng-click="vm.shuffle();">shuffle</button>
+      <div>name : {{vm.sb.name}}</div>
+      <div>gender : {{vm.sb.gender}}</div>
+      <div>age : {{vm.sb.age}}</div>
+      <div>career : {{vm.sb.career}}</div>
+      <div><img ng-src="{{vm.sb.photo}}"></div>
+    </div>
+
+
+    <div ng-controller="ezController">
       <hg-namecard></hg-namecard>
     </div>
 
-    <script src="scripts/common.js?asdasdiusndkskjdskjd"></script>
+    <%= require('html!./inc-footer.html') %>
   </body>
 </html>

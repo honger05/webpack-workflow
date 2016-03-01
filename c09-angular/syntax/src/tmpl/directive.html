@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="honger">
+  <head>
+    <meta charset="utf-8">
+    <title>directive 指令 操作 DOM</title>
+    <%= require('html!./inc-meta.html') %>
+  </head>
+  <body>
+    <div ng-controller="myCtrl">
+      Date format: <input ng-model="format"> <hr/>
+      Current time is: <span ez-current-time="format"></span>
+    </div>
+
+    <%= require('html!./inc-footer.html') %>
+  </body>
+</html>

@@ -19,7 +19,7 @@ var config = {
 }
 
 var route = [
-  'index', 'namecard'
+  'index', 'namecard', 'provider', 'directive', 'data_view', 'data_view_data'
 ]
 
 var devConfig = {
