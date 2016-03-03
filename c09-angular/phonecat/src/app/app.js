@@ -1,4 +1,6 @@
 
-var $ = require('jquery')
+require('./bower_components/angular/angular')
+require('./bower_components/bootstrap/less/bootstrap.less')
+require('./css/app.css')
 
-console.log($);
+require('./components/controllers')

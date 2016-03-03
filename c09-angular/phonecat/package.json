@@ -47,8 +47,8 @@
     "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update",
 
-    "dev": "webpack-dev-server --config wb-dev-conf.js --progress --inline --colors",
-    "build": "webpack --config wb-pro-conf.js --progress --colors",
+    "dev": "webpack-dev-server --config wb-conf.js --progress --inline --colors",
+    "build": "webpack --config wb-conf.js --progress --colors",
 
     "preprotractor": "npm run update-webdriver",
     "protractor": "protractor test/protractor-conf.js",

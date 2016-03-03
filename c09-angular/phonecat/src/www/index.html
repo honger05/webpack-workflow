@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="phonecatApp">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>angular phonecat</title>
   </head>
-  <body>
-    aaaaaaas
+  <body ng-controller="PhoneListCtrl">
+
+    <ul>
+      <li ng-repeat="phone in phones">
+        <span>{{phone.name}}</span>
+        <p>
+          {{phone.snippet}}
+        </p>
+      </li>
+    </ul>
 
     <script src="./scripts/app.bundle.js" charset="utf-8"></script>
   </body>

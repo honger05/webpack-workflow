@@ -17,8 +17,9 @@ var config = {
   cdn: "http://www.yy.com"
 }
 
-var route = [
-]
+console.log('===================================' + config.env);
+
+var route = []
 
 var devConfig = {
   entry: {
