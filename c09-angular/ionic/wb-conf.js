@@ -19,7 +19,7 @@ var config = {
 }
 
 var route = [
-  'index', 'template'
+  'index'
 ]
 
 var devConfig = {

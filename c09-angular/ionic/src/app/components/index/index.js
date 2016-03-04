@@ -7,13 +7,13 @@ angular.module('ionicApp', ['ionic'])
     .state('tabs', {
       url: "/tab",
       abstract: true,
-      templateUrl: "templates/tabs.html"
+      template: require('./views/tabs.hbs')
     })
     .state('tabs.home', {
       url: "/home",
       views: {
         'home-tab': {
-          templateUrl: "templates/home.html"
+          template: require('./views/home.hbs')
         }
       }
     })
@@ -21,7 +21,7 @@ angular.module('ionicApp', ['ionic'])
       url: "/facts",
       views: {
         'home-tab': {
-          templateUrl: "templates/facts.html"
+          template: require('./views/facts.hbs')
         }
       }
     })
@@ -29,7 +29,7 @@ angular.module('ionicApp', ['ionic'])
       url: "/facts2",
       views: {
         'home-tab': {
-          templateUrl: "templates/facts2.html"
+          template: require('./views/facts2.hbs')
         }
       }
     })
@@ -37,7 +37,7 @@ angular.module('ionicApp', ['ionic'])
       url: "/about",
       views: {
         'about-tab': {
-          templateUrl: "templates/about.html"
+          template: require('./views/about.hbs')
         }
       }
     })
@@ -45,7 +45,7 @@ angular.module('ionicApp', ['ionic'])
       url: "/navstack",
       views: {
         'about-tab': {
-          templateUrl: "templates/nav-stack.html"
+          template: require('./views/nav-stack.hbs')
         }
       }
     })
@@ -53,7 +53,7 @@ angular.module('ionicApp', ['ionic'])
       url: "/contact",
       views: {
         'contact-tab': {
-          templateUrl: "templates/contact.html"
+          template: require('./views/contact.hbs')
         }
       }
     });
@@ -63,20 +63,20 @@ angular.module('ionicApp', ['ionic'])
 
 })
 
-.controller('HomeTabCtrl', function($scope, $templateCache) {
-  var tabs_tmpl = Handlebars.compile(require('./views/tabs.hbs'))()
-  var tabs_home_tmpl = Handlebars.compile(require('./views/home.hbs'))()
-  var tabs_facts_tmpl = Handlebars.compile(require('./views/facts.hbs'))()
-  var tabs_facts2_tmpl = Handlebars.compile(require('./views/facts2.hbs'))()
-  var tabs_about_tmpl = Handlebars.compile(require('./views/about.hbs'))()
-  var tabs_navstack_tmpl = Handlebars.compile(require('./views/nav-stack.hbs'))()
-  var tabs_contact_tmpl = Handlebars.compile(require('./views/contact.hbs'))()
-
-  $templateCache.put('templates/tabs.html', tabs_tmpl)
-  $templateCache.put('templates/home.html', tabs_home_tmpl)
-  $templateCache.put('templates/facts.html', tabs_facts_tmpl)
-  $templateCache.put('templates/facts2.html', tabs_facts2_tmpl)
-  $templateCache.put('templates/about.html', tabs_about_tmpl)
-  $templateCache.put('templates/nav-stack.html', tabs_navstack_tmpl)
-  $templateCache.put('templates/contact.html', tabs_contact_tmpl)
-});
+// .controller('HomeTabCtrl', function($scope, $templateCache) {
+//   var tabs_tmpl = Handlebars.compile(require('./views/tabs.hbs'))()
+//   var tabs_home_tmpl = Handlebars.compile(require('./views/home.hbs'))()
+//   var tabs_facts_tmpl = Handlebars.compile(require('./views/facts.hbs'))()
+//   var tabs_facts2_tmpl = Handlebars.compile(require('./views/facts2.hbs'))()
+//   var tabs_about_tmpl = Handlebars.compile(require('./views/about.hbs'))()
+//   var tabs_navstack_tmpl = Handlebars.compile(require('./views/nav-stack.hbs'))()
+//   var tabs_contact_tmpl = Handlebars.compile(require('./views/contact.hbs'))()
+//
+//   $templateCache.put('templates/tabs.html', tabs_tmpl)
+//   $templateCache.put('templates/home.html', tabs_home_tmpl)
+//   $templateCache.put('templates/facts.html', tabs_facts_tmpl)
+//   $templateCache.put('templates/facts2.html', tabs_facts2_tmpl)
+//   $templateCache.put('templates/about.html', tabs_about_tmpl)
+//   $templateCache.put('templates/nav-stack.html', tabs_navstack_tmpl)
+//   $templateCache.put('templates/contact.html', tabs_contact_tmpl)
+// });

@@ -7,8 +7,7 @@
     "underscore": "^1.8.3"
   },
   "scripts": {
-    "build": "webpack --config webpack-production.config.js --progress --colors",
-    "dev": "webpack-dev-server --config webpack-dev-server.config.js --progress --inline --colors"
+    "dev": "webpack-dev-server --config wb-conf.js --progress --inline --colors"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.1.0",
