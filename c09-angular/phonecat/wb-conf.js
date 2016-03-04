@@ -87,6 +87,10 @@ var devConfig = {
         loader: "url-loader?limit=1000&name=img/[name]-[hash:10].[ext]"
       },
       {
+        test: /\.html$/,
+        loader: 'html-loader'
+      },
+      {
         test: /\.handlebars$/,
         loader: 'handlebars-loader'
       },
